@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/UssFile.uss?fileID=7433441132597879392&amp;guid=29d8501b5e8ffc54a9773c91b1105dd1&amp;type=3#UssFile" />
+    <ui:VisualElement name="container" class="stretch-to-parent-size center-content" style="background-color: rgb(0, 255, 0);">
+        <ui:VisualElement name="aspect-ratio-element" class="aspect-ratio-element" style="background-color: rgb(255, 0, 0);">
+            <ui:VisualElement name="aspect-ratio-content" class="stretch-to-parent-size" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
