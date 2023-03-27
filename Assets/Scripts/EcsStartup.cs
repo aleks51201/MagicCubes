@@ -21,13 +21,17 @@ namespace MagicCubes
 
         private void AddOneFrames()
         {
+            _systems
+                .OneFrame<WinEvent>();
         }
 
         private void AddSystems()
         {
             _systems
                 .Add(new CreateEntityForCubeViewSystem())
-                .Add(new RotationSystem());
+                .Add(new RotationSystem())
+                .Add(new WinRotationCheckSystem())
+                .Add(new WinSystem());
         }
 
         private void Start()

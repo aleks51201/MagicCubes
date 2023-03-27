@@ -6,5 +6,6 @@ namespace MagicCubes.Cube
     public struct InitComponent
     {
         public CubeView cubeView;
+        public float winYRotation;
     }
 }

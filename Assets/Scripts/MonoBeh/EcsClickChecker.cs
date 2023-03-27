@@ -1,7 +1,6 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Voody.UniLeo;
 
 namespace MagicCubes.Cube
 {
@@ -13,7 +12,7 @@ namespace MagicCubes.Cube
         public void OnPointerClick(PointerEventData eventData)
         {
             var ent = _cubeView.ecsEntity;
-            
+
             _cubeView.ecsEntity.Get<RotateEvent>();
         }
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MagicCubes.Cube
 {
-    public class CubeView: MonoBehaviour
+    public class CubeView : MonoBehaviour
     {
         public EcsEntity ecsEntity;
     }
