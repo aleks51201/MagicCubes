@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="LevelElement" src="project://database/Assets/UI%20Toolkit/UITemplates/LevelElement.uxml?fileID=9197481963319205126&amp;guid=85bffee59dc344a4889589655260c6c0&amp;type=3#LevelElement" />
+    <Style src="project://database/Assets/MenuUss.uss?fileID=7433441132597879392&amp;guid=8f107d5d937eed84d8ae5b2a35a88cd1&amp;type=3#MenuUss" />
+    <ui:IMGUIContainer name="UIHolder" style="width: 100%; height: 100%; visibility: visible;">
+        <ui:VisualElement name="StartScreen" view-data-key="StartScreen" style="width: 100%; height: 100%; overflow: visible; visibility: visible; display: flex;">
+            <ui:VisualElement name="TopName" style="width: 100%; height: 40%;">
+                <ui:Label text="Magic Cubes" display-tooltip-when-elided="true" style="justify-content: center; align-items: center; width: 100%; height: 100%; -unity-text-align: middle-center; font-size: 150%; -unity-font-style: bold; color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="StartButton" style="width: 100%; height: 60%; justify-content: center; align-items: center;">
+                <ui:Button text="PLAY" display-tooltip-when-elided="true" name="StartButton" view-data-key="StartButton" class="StartButtonClass StartButton" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="LevelChooseScreen" view-data-key="LevelChooseScreen" style="width: 100%; height: 100%; display: none;">
+            <ui:VisualElement name="TextElement" style="width: 100%; height: 20%; align-items: center; justify-content: center;">
+                <ui:Label text="Choose a level!" display-tooltip-when-elided="true" style="font-size: 100%; -unity-font-style: bold; right: auto; top: 25%; bottom: auto;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Levels" view-data-key="Levels" style="width: 100%; height: 80%; align-items: center; justify-content: center;">
+                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Auto" horizontal-page-size="5" vertical-page-size="5" mode="Horizontal" focusable="false" name="ScrollViewForLevels" view-data-key="ScrollViewForLevels" style="width: 70%; height: 80%; border-left-width: 9px; border-right-width: 9px; border-top-width: 9px; border-bottom-width: 9px; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; align-items: flex-start; justify-content: space-around; flex-direction: row; flex-wrap: wrap; flex-shrink: 1;">
+                    <ui:Instance template="LevelElement" name="LevelElement" />
+                    <ui:Instance template="LevelElement" name="LevelElement" />
+                    <ui:Instance template="LevelElement" name="LevelElement" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:IMGUIContainer>
+</ui:UXML>
