@@ -10,17 +10,17 @@ namespace MagicCubes.Cube
 
         public void Run()
         {
-            List<InitComponent> winComonents = new();
+            List<CubeInitComponent> winComonents = new();
             int entityCount = _cubeFilter.GetEntitiesCount();
             foreach (var index in _cubeFilter)
             {
                 ref var entity = ref _cubeFilter.GetEntity(index);
-                var transform = entity.Get<InitComponent>().cubeView.transform;
-                ref var winYRotaion = ref entity.Get<InitComponent>().winYRotation;
+                var transform = entity.Get<CubeInitComponent>().cubeView.transform;
+                ref var winYRotaion = ref entity.Get<CubeInitComponent>().winYRotation;
 
                 if (transform.rotation.y == winYRotaion)
                 {
-                    winComonents.Add(entity.Get<InitComponent>());
+                    winComonents.Add(entity.Get<CubeInitComponent>());
                     entity.Del<EndRotateEvent>();
                 }
             }

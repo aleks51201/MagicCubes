@@ -5,7 +5,7 @@ namespace MagicCubes.Cube
     sealed class CreateEntityForCubeViewSystem : IEcsInitSystem
     {
         private readonly EcsWorld _world = null;
-        private readonly EcsFilter<InitComponent> _initFilter = null;
+        private readonly EcsFilter<CubeInitComponent> _initFilter = null;
         //private CubeView[] _cubeViews = null;
 
 

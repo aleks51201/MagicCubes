@@ -3,7 +3,7 @@
 namespace MagicCubes.Cube
 {
     [Serializable]
-    public struct InitComponent
+    public struct CubeInitComponent
     {
         public CubeView cubeView;
         public float winYRotation;

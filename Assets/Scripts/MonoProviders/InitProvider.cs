@@ -2,7 +2,7 @@
 
 namespace MagicCubes.Cube
 {
-    public class InitProvider : MonoProvider<InitComponent>
+    public class InitProvider : MonoProvider<CubeInitComponent>
     {
 
     }

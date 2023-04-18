@@ -15,7 +15,7 @@ namespace MagicCubes.Cube
             foreach (var item in _rotationFilter)
             {
                 ref var entity = ref _rotationFilter.GetEntity(item);
-                var transform = entity.Get<InitComponent>().cubeView.transform;
+                var transform = entity.Get<CubeInitComponent>().cubeView.transform;
                 ref var rotation = ref _rotationFilter.Get2(item).rotation;
                 ref var neighbors = ref _rotationFilter.Get3(item).neighborsCubes;
 

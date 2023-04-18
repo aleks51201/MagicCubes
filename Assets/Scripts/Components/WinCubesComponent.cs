@@ -4,6 +4,6 @@ namespace MagicCubes.Cube
 {
     public struct WinCubesComponent
     {
-        public List<InitComponent> winCubes;
+        public List<CubeInitComponent> winCubes;
     }
 }
