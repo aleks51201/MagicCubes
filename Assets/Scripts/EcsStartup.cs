@@ -26,6 +26,8 @@ namespace MagicCubes
         {
             _systems
                 .Add(new CreateEntityForUIVisualElementSystem())
+                .Add(new StartButtonRegisterCallbackSystem())
+                .Add(new StartButtonClickHandlerSystem())
                 .Add(new CreateEntityForCubeViewSystem())
                 .Add(new RotationSystem())
                 .Add(new WinRotationCheckSystem())
