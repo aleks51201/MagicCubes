@@ -1,6 +1,7 @@
 using Leopotam.Ecs;
 using MagicCubes.Config;
 using MagicCubes.Cube;
+using MagicCubes.Ui;
 using Systems.UI;
 using UnityEngine;
 using Voody.UniLeo;
@@ -24,7 +25,8 @@ namespace MagicCubes
         private void AddOneFrames()
         {
             _systems
-                .OneFrame<WinEvent>();
+                .OneFrame<WinEvent>()
+                .OneFrame<StartButtonClickedEvent>();
         }
 
         private void AddSystems()
