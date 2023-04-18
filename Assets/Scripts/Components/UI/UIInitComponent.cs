@@ -7,9 +7,9 @@ namespace MagicCubes.Ui
     [Serializable]
     public class UIInitComponent : MonoBehaviour
     {
-        public UIDocument _uiDocument;
-        public VisualTreeAsset _levelElement;
-        public VisualTreeAsset _levelStar;
-        public VisualTreeAsset _gameUI;
+        public UIDocument UIDocument;
+        public VisualTreeAsset LevelElement;
+        public VisualTreeAsset LevelStar;
+        public VisualTreeAsset GameUI;
     }
 }
