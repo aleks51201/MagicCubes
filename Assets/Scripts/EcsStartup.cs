@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using MagicCubes.Config;
 using MagicCubes.Cube;
 using Systems.UI;
 using UnityEngine;
@@ -8,12 +9,16 @@ namespace MagicCubes
 {
     public class EcsStartup : MonoBehaviour
     {
+        [SerializeField] private Configurations _configurations;
+
         private EcsWorld _world;
         private EcsSystems _systems;
 
 
         private void AddInjections()
         {
+            _systems
+                .Inject(_configurations);
         }
 
         private void AddOneFrames()
