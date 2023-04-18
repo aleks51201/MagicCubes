@@ -5,11 +5,12 @@ using UnityEngine.UIElements;
 namespace MagicCubes.Ui
 {
     [Serializable]
-    public class UIInitComponent : MonoBehaviour
+    public struct UIInitComponent 
     {
         public UIDocument UIDocument;
         public VisualTreeAsset LevelElement;
         public VisualTreeAsset LevelStar;
         public VisualTreeAsset GameUI;
+        public VisualTreeAsset MenuUI;
     }
 }

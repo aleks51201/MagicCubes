@@ -1,5 +1,6 @@
 using Leopotam.Ecs;
 using MagicCubes.Cube;
+using Systems.UI;
 using UnityEngine;
 using Voody.UniLeo;
 
@@ -24,6 +25,7 @@ namespace MagicCubes
         private void AddSystems()
         {
             _systems
+                .Add(new CreateEntityForUIVisualElementSystem())
                 .Add(new CreateEntityForCubeViewSystem())
                 .Add(new RotationSystem())
                 .Add(new WinRotationCheckSystem())
