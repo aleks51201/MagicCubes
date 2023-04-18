@@ -2,8 +2,8 @@
 
 namespace MagicCubes.Ui
 {
-    public struct StartButtonComponent
+    internal struct StartButtonComponent
     {
-        public Button Button;
+        internal Button Button;
     }
 }
