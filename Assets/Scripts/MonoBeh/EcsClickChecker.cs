@@ -1,8 +1,9 @@
 ﻿using Leopotam.Ecs;
+using MagicCubes.Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.MonoBeh
 {
     public class EcsClickChecker : MonoBehaviour, IPointerClickHandler
     {

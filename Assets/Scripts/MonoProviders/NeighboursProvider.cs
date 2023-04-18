@@ -1,6 +1,7 @@
-﻿using Voody.UniLeo;
+﻿using MagicCubes.Components;
+using Voody.UniLeo;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.MonoProviders.Cube
 {
     public class NeighboursProvider : MonoProvider<NeighborsComponent>
     {

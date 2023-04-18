@@ -1,6 +1,8 @@
 ﻿using Leopotam.Ecs;
+using MagicCubes.Components;
+using MagicCubes.Tag;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.Systems
 {
     sealed class CreateEntityForCubeViewSystem : IEcsInitSystem
     {

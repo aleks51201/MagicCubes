@@ -1,6 +1,9 @@
 ﻿using Leopotam.Ecs;
+using MagicCubes.Components;
+using MagicCubes.Events;
+using MagicCubes.Tag;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.Systems
 {
     sealed class CubeRotateSendEventSystem : IEcsRunSystem
     {

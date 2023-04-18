@@ -1,6 +1,7 @@
-﻿using System;
+﻿using MagicCubes.MonoBeh;
+using System;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.Components
 {
     [Serializable]
     public struct CubeInitComponent

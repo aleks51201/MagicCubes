@@ -1,7 +1,11 @@
 ﻿using Leopotam.Ecs;
+using MagicCubes.Components;
+using MagicCubes.Events;
+using MagicCubes.MonoBeh;
+using MagicCubes.Tag;
 using UnityEngine;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.Systems
 {
     sealed class RotationSystem : IEcsRunSystem
     {
@@ -32,7 +36,7 @@ namespace MagicCubes.Cube
             }
             if (count > 0)
             {
-                foreach(var index in _cubeFilter)
+                foreach (var index in _cubeFilter)
                 {
                     ref var entity = ref _cubeFilter.GetEntity(index);
                     entity.Get<EndRotateEvent>();

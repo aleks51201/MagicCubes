@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MagicCubes.Ui
+namespace MagicCubes.Components.Ui
 {
     [Serializable]
     public struct UIInitComponent 

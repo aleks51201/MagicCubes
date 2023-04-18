@@ -1,8 +1,8 @@
 ﻿using Leopotam.Ecs;
-using MagicCubes.Ui;
+using MagicCubes.Components.Ui;
 using UnityEngine.UIElements;
 
-namespace Systems.UI
+namespace MagicCubes.Systems.UI
 {
     public class CreateEntityForUIVisualElementSystem : IEcsInitSystem
     {

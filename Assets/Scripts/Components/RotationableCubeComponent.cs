@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.Components
 {
     [Serializable]
     public struct RotationableCubeComponent

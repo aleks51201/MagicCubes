@@ -1,4 +1,4 @@
-﻿namespace MagicCubes.Cube
+﻿namespace MagicCubes.Tag
 {
     internal struct CubeTag
     {

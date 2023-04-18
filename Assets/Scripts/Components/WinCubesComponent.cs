@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.Components
 {
     public struct WinCubesComponent
     {

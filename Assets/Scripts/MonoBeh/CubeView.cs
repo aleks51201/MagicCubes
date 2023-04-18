@@ -1,7 +1,7 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.MonoBeh
 {
     public class CubeView : MonoBehaviour
     {

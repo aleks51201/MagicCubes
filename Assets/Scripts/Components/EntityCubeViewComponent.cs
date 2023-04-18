@@ -1,4 +1,6 @@
-﻿namespace MagicCubes.Cube
+﻿using MagicCubes.MonoBeh;
+
+namespace MagicCubes.Components
 {
     internal struct EntityCubeViewComponent
     {

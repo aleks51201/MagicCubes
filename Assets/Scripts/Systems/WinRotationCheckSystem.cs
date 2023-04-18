@@ -1,7 +1,10 @@
 ﻿using Leopotam.Ecs;
+using MagicCubes.Components;
+using MagicCubes.Events;
+using MagicCubes.Tag;
 using System.Collections.Generic;
 
-namespace MagicCubes.Cube
+namespace MagicCubes.Systems
 {
     sealed class WinRotationCheckSystem : IEcsRunSystem
     {

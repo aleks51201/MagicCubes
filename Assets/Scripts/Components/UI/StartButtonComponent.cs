@@ -1,6 +1,6 @@
 ﻿using UnityEngine.UIElements;
 
-namespace MagicCubes.Ui
+namespace MagicCubes.Components.Ui
 {
     internal struct StartButtonComponent
     {
