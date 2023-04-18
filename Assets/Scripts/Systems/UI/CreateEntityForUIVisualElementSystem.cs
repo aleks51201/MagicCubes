@@ -9,20 +9,35 @@ namespace Systems.UI
         private readonly EcsWorld _world = null;
         private readonly EcsFilter<UIInitComponent> _initFilter = null;
 
-        private const string UIHolder = "UIHolder";
+        private const string UIHolder = "LevelChooseScreen";
         private const string StartButton = "StartButton";
 
 
         public void Init()
         {
-            InitStartButton();
+            foreach (var index in _initFilter)
+            {
+                InitStartButton(index);
+                InitUIHolder(index);
+            }
         }
 
-        private void InitStartButton()
+        private void InitUIHolder(int index)
         {
-            ref var uiInitComponent = ref _initFilter.Get1(0);
+            ref var uiInitComponent = ref _initFilter.Get1(index);
+            var startMenuUIHolder = uiInitComponent.UIDocument.rootVisualElement.Q(UIHolder);
+            var startMenuUIHolderComponent = new StartMenuLevelChooseScreenComponent()
+            {
+                LvlChooseScreen = startMenuUIHolder
+            };
+            _world.NewEntity().Get<StartMenuLevelChooseScreenComponent>() = startMenuUIHolderComponent;
+        }
+
+        private void InitStartButton(int index)
+        {
+            ref var uiInitComponent = ref _initFilter.Get1(index);
             var startButton = uiInitComponent.UIDocument.rootVisualElement.Q<Button>(StartButton);
-            StartButtonComponent btnComponent = new()
+            var btnComponent = new StartButtonComponent()
             {
                 Button = startButton
             };
