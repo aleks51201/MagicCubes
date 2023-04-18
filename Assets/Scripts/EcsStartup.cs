@@ -7,16 +7,12 @@ namespace MagicCubes
 {
     public class EcsStartup : MonoBehaviour
     {
-        public CubeView[] cubeViews;
-
         private EcsWorld _world;
         private EcsSystems _systems;
 
 
         private void AddInjections()
         {
-            _systems
-                .Inject(cubeViews);
         }
 
         private void AddOneFrames()
