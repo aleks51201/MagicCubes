@@ -1,8 +1,9 @@
 ﻿using Leopotam.Ecs;
-using MagicCubes.Ui;
+using MagicCubes.Components.Ui;
+using MagicCubes.Events.Ui;
 using UnityEngine.UIElements;
 
-namespace Systems.UI
+namespace MagicCubes.Systems.UI
 {
     public class StartButtonRegisterCallbackSystem : IEcsInitSystem
     {
@@ -11,7 +12,7 @@ namespace Systems.UI
 
         public void Init()
         {
-            foreach(var index in _startButtonFilter)
+            foreach (var index in _startButtonFilter)
             {
                 _startButtonFilter.Get1(0).Button.RegisterCallback<ClickEvent>(OnButtonClick);
             }
@@ -19,7 +20,7 @@ namespace Systems.UI
 
         private void OnButtonClick(ClickEvent clickEvent)
         {
-            foreach(var index in _startButtonFilter)
+            foreach (var index in _startButtonFilter)
             {
                 _startButtonFilter.GetEntity(index).Get<StartButtonClickEvent>();
             }

@@ -1,8 +1,9 @@
 ﻿using Leopotam.Ecs;
-using MagicCubes.Ui;
+using MagicCubes.Components.Ui;
+using MagicCubes.Events.Ui;
 using UnityEngine.UIElements;
 
-namespace Systems.UI
+namespace MagicCubes.Systems.UI
 {
     public class StartButtonClickHandlerSystem : IEcsRunSystem
     {
@@ -14,13 +15,9 @@ namespace Systems.UI
         {
             foreach (var index in _clickFilter)
             {
-                foreach (var indexJ in _lvlChooseScreenFilter)
-                {
-                    ref var lvlScreen = ref _lvlChooseScreenFilter.Get1(indexJ).LvlChooseScreen;
-                    lvlScreen.style.display = DisplayStyle.Flex;
-                }
                 _clickFilter.Get2(index).Button.style.display = DisplayStyle.None;
                 _clickFilter.GetEntity(index).Del<StartButtonClickEvent>();
+                _lvlChooseScreenFilter.GetEntity(index).Get<StartButtonClickedEvent>();
             }
         }
     }
