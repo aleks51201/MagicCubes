@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI
 {
-    public class CreateEntityForUIVisualElementSystem : IEcsInitSystem
+    public sealed class CreateEntityForUIVisualElementSystem : IEcsInitSystem
     {
         private readonly EcsWorld _world = null;
         private readonly EcsFilter<UIInitComponent> _initFilter = null;
@@ -39,7 +39,8 @@ namespace MagicCubes.Systems.UI
             var startButton = uiInitComponent.UIDocument.rootVisualElement.Q<Button>(StartButton);
             var btnComponent = new StartButtonComponent()
             {
-                Button = startButton
+                Button = startButton,
+                ButtonStatusHolder = new()
             };
             _world.NewEntity().Get<StartButtonComponent>() = btnComponent;
         }

@@ -1,12 +1,12 @@
 ﻿using Leopotam.Ecs;
 using MagicCubes.Components.Ui;
 using MagicCubes.Events.Ui;
-using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI
 {
-    public class StartButtonRegisterCallbackSystem : IEcsInitSystem
+    public sealed class StartButtonRegisterCallbackSystem : IEcsInitSystem
     {
+        private readonly EcsWorld _world = null;
         private readonly EcsFilter<StartButtonComponent> _startButtonFilter = null;
 
 
@@ -14,16 +14,15 @@ namespace MagicCubes.Systems.UI
         {
             foreach (var index in _startButtonFilter)
             {
-                _startButtonFilter.Get1(0).Button.RegisterCallback<ClickEvent>(OnButtonClick);
+                ref var startBtnComponent = ref _startButtonFilter.Get1(index);
+                _startButtonFilter.Get1(index).Button.clicked += startBtnComponent.ButtonStatusHolder.OnClicked;
+                _startButtonFilter.Get1(index).Button.clicked += OnClick;
             }
         }
 
-        private void OnButtonClick(ClickEvent clickEvent)
+        private void OnClick()
         {
-            foreach (var index in _startButtonFilter)
-            {
-                _startButtonFilter.GetEntity(index).Get<StartButtonClickEvent>();
-            }
+            _world.NewEntity().Get<StartButtonClickEvent>();
         }
     }
 }
