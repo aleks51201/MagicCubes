@@ -5,7 +5,7 @@ namespace MagicCubes.Components.Ui
 {
     internal struct LevelElementComponent
     {
-        internal VisualTreeAsset LvlElement;
+        internal VisualElement LvlElement;
         internal string SceneName;
     }
 }
