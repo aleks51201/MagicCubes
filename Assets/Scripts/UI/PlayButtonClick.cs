@@ -6,6 +6,9 @@ public class PlayButtonClick : MonoBehaviour
     private const string UIHolder = "UIHolder";
     private const string StartButton = "StartButton";
 
+    [SerializeField] private UIDocument _uiDocument;
+    [SerializeField] private VisualTreeAsset _levelElement;
+    [SerializeField] private VisualTreeAsset _levelStar;
     [SerializeField] private VisualTreeAsset _gameUI;
 
     private Button _btn;
@@ -22,7 +25,12 @@ public class PlayButtonClick : MonoBehaviour
 
     private void OnEnable()
     {
-        _btn = GetComponent<UIDocument>().rootVisualElement.Q<Button>(StartButton);
-        _btn.RegisterCallback<ClickEvent>(OnClick);
+        //List<Button> g = GetComponent<UIDocument>().rootVisualElement.Query<Button>(StartButton).ToList();
+        //_btn = GetComponent<UIDocument>().rootVisualElement.Query<Button>(StartButton);
+        /*        foreach(var btn  in g)
+                {
+                    btn.RegisterCallback<ClickEvent>(OnClick);
+                }
+        */        //_btn.RegisterCallback<ClickEvent>(OnClick);
     }
 }
