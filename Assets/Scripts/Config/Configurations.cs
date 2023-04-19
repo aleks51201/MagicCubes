@@ -6,5 +6,8 @@ namespace MagicCubes.Config
     public class Configurations : ScriptableObject
     {
         [SerializeField] private LvlHolderConfig _lvlHolderConfig;
+
+
+        public LvlHolderConfig LvlHolderConfig => _lvlHolderConfig;
     }
 }
