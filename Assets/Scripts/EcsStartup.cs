@@ -1,8 +1,9 @@
 using Leopotam.Ecs;
 using MagicCubes.Config;
-using MagicCubes.Cube;
-using MagicCubes.Ui;
-using Systems.UI;
+using MagicCubes.Events;
+using MagicCubes.Events.Ui;
+using MagicCubes.Systems;
+using MagicCubes.Systems.UI;
 using UnityEngine;
 using Voody.UniLeo;
 
@@ -35,6 +36,7 @@ namespace MagicCubes
                 .Add(new CreateEntityForUIVisualElementSystem())
                 .Add(new StartButtonRegisterCallbackSystem())
                 .Add(new StartButtonClickHandlerSystem())
+                .Add(new lvlChooseScreenInitStartSystem())
                 .Add(new CreateEntityForCubeViewSystem())
                 .Add(new RotationSystem())
                 .Add(new WinRotationCheckSystem())
