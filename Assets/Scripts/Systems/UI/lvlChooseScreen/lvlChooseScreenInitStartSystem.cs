@@ -19,14 +19,16 @@ namespace MagicCubes.Systems.UI
         {
             foreach (var index in _clickedFilter)
             {
+
                 ref var lvlScreen = ref _clickedFilter.Get2(index).LvlChooseScreen;
                 lvlScreen.style.display = DisplayStyle.Flex;
                 foreach (var item in _configurations.LvlHolderConfig.SceneNames)
                 {
-                    lvlScreen.Q(levelContainer).Add(_uiFilter.Get1(index).LevelElement.Instantiate());
+                    TemplateContainer container = _uiFilter.Get1(index).LevelElement.Instantiate();
+                    lvlScreen.Q(levelContainer).Add(container);
                     var lvlElement = new LevelElementComponent()
                     {
-                        LvlElement = _uiFilter.Get1(index).LevelElement,
+                        LvlElement = container,
                         SceneName = item
                     };
                     _world.NewEntity().Get<LevelElementComponent>() = lvlElement;
