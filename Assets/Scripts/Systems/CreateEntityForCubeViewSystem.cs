@@ -1,10 +1,13 @@
 ﻿using Leopotam.Ecs;
 using MagicCubes.Components;
+using MagicCubes.Config;
 using MagicCubes.Tag;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MagicCubes.Systems
 {
-    sealed class CreateEntityForCubeViewSystem : IEcsInitSystem
+    internal sealed class CreateEntityForCubeViewSystem : IEcsInitSystem
     {
         private readonly EcsWorld _world = null;
         private readonly EcsFilter<CubeInitComponent> _initFilter = null;
@@ -23,4 +26,5 @@ namespace MagicCubes.Systems
             }
         }
     }
+
 }
