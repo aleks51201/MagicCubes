@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MenuUss.uss?fileID=7433441132597879392&amp;guid=8f107d5d937eed84d8ae5b2a35a88cd1&amp;type=3#MenuUss" />
+    <ui:VisualElement name="Canvas" style="width: 100%; height: 100%; justify-content: center; align-items: center;">
+        <ui:VisualElement name="ButtonsUIHolder" style="width: 70%; height: 40%; align-items: center; justify-content: center; display: flex;">
+            <ui:VisualElement name="OnPauseMenu" style="width: 100%; height: 100%; min-width: auto; min-height: auto; display: none; visibility: visible;">
+                <ui:GroupBox name="ButtonsHolderPause" class="ButtonsHolder" style="align-items: center; justify-content: space-around; background-color: rgba(60, 60, 60, 0.77); border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; flex-direction: row; width: 100%; height: 78%; display: flex;">
+                    <ui:Button text="MENU" display-tooltip-when-elided="true" name="BackToMenu" class="MenuButton" />
+                    <ui:Button text="RESUME" display-tooltip-when-elided="true" name="ResumeGame" class="MenuButton" />
+                    <ui:Button text="RESET" display-tooltip-when-elided="true" name="ResetGame" class="MenuButton" />
+                </ui:GroupBox>
+            </ui:VisualElement>
+            <ui:VisualElement name="OnWinMenu" style="width: 100%; height: 100%; min-width: auto; min-height: auto; display: none;">
+                <ui:VisualElement name="StepsCountWinHolder" style="width: 100%; height: 39%; display: flex; justify-content: center; align-items: center;">
+                    <ui:Label text="Rotations: 0" display-tooltip-when-elided="true" name="RotationsCountWin" style="width: 100%; height: 91%; font-size: 61%; -unity-font-style: bold; -unity-text-align: middle-center; white-space: normal;" />
+                </ui:VisualElement>
+                <ui:GroupBox name="ButtonsHolderWin" style="align-items: center; justify-content: space-around; background-color: rgba(60, 60, 60, 0.77); border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; flex-direction: row; width: 100%; height: 78%; display: flex;">
+                    <ui:Button text="MENU" display-tooltip-when-elided="true" name="BackToMenu" class="MenuButton" />
+                    <ui:Button text="NEXT LEVEL" display-tooltip-when-elided="true" name="NextLevel" class="MenuButton" />
+                    <ui:Button text="REPLAY" display-tooltip-when-elided="true" name="ReplayGame" class="MenuButton" />
+                </ui:GroupBox>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="GameUI" style="width: 100%; height: 100%; align-items: flex-end; display: none;">
+            <ui:VisualElement name="StepsCountPanel" style="width: 25%; height: 10%;">
+                <ui:Label text="Rotations: 0" display-tooltip-when-elided="true" name="RotationsCount" style="padding-left: 0; padding-right: 5%; padding-top: 3%; padding-bottom: 0; font-size: 45px; align-items: flex-start; -unity-text-align: upper-right; -unity-font-style: bold;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

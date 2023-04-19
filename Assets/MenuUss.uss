@@ -1,16 +1,16 @@
 .StartButton:hover {
-    color: rgba(0, 23, 255, 255);
-    border-left-color: rgba(0, 0, 0, 255);
-    background-color: rgba(38, 38, 38, 255);
+    color: rgb(0, 23, 255);
+    border-left-color: rgb(0, 0, 0);
+    background-color: rgb(38, 38, 38);
 }
 
 .LevelButton:hover {
-    background-color: rgba(154, 154, 154, 255);
+    background-color: rgb(154, 154, 154);
     border-left-color: rgb(0, 0, 0);
     border-right-color: rgb(0, 0, 0);
     border-top-color: rgb(0, 0, 0);
     border-bottom-color: rgb(0, 0, 0);
-    color: rgba(91, 91, 91, 255);
+    color: rgb(91, 91, 91);
     border-left-width: 9px;
     border-right-width: 9px;
     border-top-width: 9px;
@@ -43,4 +43,36 @@
     -unity-font-style: bold;
     display: flex;
     visibility: visible;
+}
+
+.MenuButton {
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-left-color: rgba(0, 0, 0, 255);
+    border-right-color: rgba(0, 0, 0, 255);
+    border-top-color: rgba(0, 0, 0, 255);
+    border-bottom-color: rgba(0, 0, 0, 255);
+    border-top-left-radius: 65px;
+    border-bottom-left-radius: 65px;
+    border-top-right-radius: 65px;
+    border-bottom-right-radius: 65px;
+    width: 250px;
+    height: 250px;
+    font-size: 440%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.ButtonsHolder {
 }
