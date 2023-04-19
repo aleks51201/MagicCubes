@@ -33,7 +33,7 @@ namespace MagicCubes
         private void AddSystems()
         {
             _systems
-                .Add(new SceneConfigValidatorSystem())
+               // .Add(new SceneConfigValidatorSystem())
                 .Add(new CreateEntityForUIVisualElementSystem())
                 .Add(new StartButtonRegisterCallbackSystem())
                 .Add(new StartButtonClickHandlerSystem())
