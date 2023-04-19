@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI
 {
-    public class lvlChooseScreenInitStartSystem : IEcsRunSystem
+    public sealed class lvlChooseScreenInitStartSystem : IEcsRunSystem
     {
         private readonly EcsWorld _world = null;
         private readonly EcsFilter<StartButtonClickedEvent, StartMenuLevelChooseScreenComponent> _clickedFilter = null;
