@@ -1,31 +1,26 @@
-.StartButton:hover {
+.StartButtonClass:hover {
     color: rgb(0, 23, 255);
     border-left-color: rgb(0, 0, 0);
     background-color: rgb(38, 38, 38);
-}
-
-.LevelButton:hover {
-    background-color: rgb(154, 154, 154);
-    border-left-color: rgb(0, 0, 0);
-    border-right-color: rgb(0, 0, 0);
-    border-top-color: rgb(0, 0, 0);
-    border-bottom-color: rgb(0, 0, 0);
-    color: rgb(91, 91, 91);
-    border-left-width: 9px;
-    border-right-width: 9px;
-    border-top-width: 9px;
-    border-bottom-width: 9px;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
+    transition-duration: 250ms;
+    width: 300px;
+    height: 300px;
+    border-top-left-radius: 187px;
+    border-bottom-left-radius: 187px;
+    border-top-right-radius: 187px;
+    border-bottom-right-radius: 187px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    font-size: 600%;
 }
 
 .StartButtonClass {
     align-items: center;
     justify-content: center;
-    width: 15%;
-    height: 15%;
+    width: 200px;
+    height: 90px;
     background-color: rgba(88, 88, 88, 0);
     border-left-width: 9px;
     border-right-width: 9px;
@@ -43,6 +38,7 @@
     -unity-font-style: bold;
     display: flex;
     visibility: visible;
+    transition-duration: 250ms;
 }
 
 .MenuButton {
@@ -50,10 +46,10 @@
     border-right-width: 10px;
     border-top-width: 10px;
     border-bottom-width: 10px;
-    border-left-color: rgba(0, 0, 0, 255);
-    border-right-color: rgba(0, 0, 0, 255);
-    border-top-color: rgba(0, 0, 0, 255);
-    border-bottom-color: rgba(0, 0, 0, 255);
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
     border-top-left-radius: 65px;
     border-bottom-left-radius: 65px;
     border-top-right-radius: 65px;
@@ -72,7 +68,131 @@
     -unity-font-style: bold;
     -unity-text-align: middle-center;
     white-space: normal;
+    transition-duration: 100ms;
+}
+
+.MenuButton:hover {
+    border-left-width: 11px;
+    border-right-width: 11px;
+    border-top-width: 11px;
+    border-bottom-width: 11px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-left-radius: 65px;
+    border-bottom-left-radius: 65px;
+    border-top-right-radius: 65px;
+    border-bottom-right-radius: 65px;
+    width: 260px;
+    height: 260px;
+    font-size: 480%;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    color: rgb(56, 135, 253);
+    background-color: rgb(55, 55, 55);
+    cursor: initial;
+    transition-duration: 100ms;
+    transition-timing-function: ease;
 }
 
 .ButtonsHolder {
+}
+
+.LevelButton {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    border-bottom-color: rgb(48, 48, 48);
+    font-size: 1062%;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    border-left-color: rgb(48, 48, 48);
+    border-right-color: rgb(48, 48, 48);
+    border-top-color: rgb(48, 48, 48);
+    transition-duration: 100ms;
+}
+
+.LevelButton:hover {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left-width: 9px;
+    border-right-width: 9px;
+    border-top-width: 9px;
+    border-bottom-width: 9px;
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    border-bottom-color: rgb(22, 22, 22);
+    font-size: 1062%;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    border-left-color: rgb(22, 22, 22);
+    border-right-color: rgb(22, 22, 22);
+    border-top-color: rgb(22, 22, 22);
+    transition-duration: 100ms;
+    color: rgb(30, 143, 250);
+}
+
+.BigStarOnWinBase {
+    width: 150px;
+    height: 150px;
+    background-image: url('project://database/Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/stepok@2x.png?fileID=2800000&guid=be340a165cb9c8d4cb50f1deeb51d4ea&type=3#stepok@2x');
+    margin-right: 10px;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.NoBigStarStyle {
+    width: 50px;
+    height: 50px;
+    background-image: url('project://database/Assets/Materials/Textures/StarObtained.png?fileID=2800000&guid=ff0a871fb661c0643b1b6d46bf6ab7ec&type=3#StarObtained');
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+    transition-duration: 10ms;
+    padding-top: 5px;
+    transition-property: all;
+}
+
+.BigStarStyle {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    transition-duration: 5s;
+    transition-timing-function: ease;
+    opacity: 1;
+    width: 150px;
+    height: 150px;
+    background-image: url('project://database/Assets/Materials/Textures/StarObtained.png?fileID=2800000&guid=ff0a871fb661c0643b1b6d46bf6ab7ec&type=3#StarObtained');
 }

@@ -7,7 +7,7 @@
                 <ui:Label text="Magic Cubes" display-tooltip-when-elided="true" style="justify-content: center; align-items: center; width: 100%; height: 100%; -unity-text-align: middle-center; font-size: 150%; -unity-font-style: bold; color: rgb(255, 255, 255);" />
             </ui:VisualElement>
             <ui:VisualElement name="StartButton" style="width: 100%; height: 60%; justify-content: center; align-items: center;">
-                <ui:Button text="PLAY" display-tooltip-when-elided="true" name="StartButton" view-data-key="StartButton" class="StartButtonClass StartButton" />
+                <ui:Button text="PLAY" display-tooltip-when-elided="true" name="StartButton" view-data-key="StartButton" class="StartButtonClass" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="LevelChooseScreen" view-data-key="LevelChooseScreen" style="width: 100%; height: 100%; display: none;">
