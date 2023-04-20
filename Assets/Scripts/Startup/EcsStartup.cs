@@ -1,36 +1,27 @@
-using Leopotam.Ecs;
-using MagicCubes.Config;
 using MagicCubes.Events;
 using MagicCubes.Events.Ui;
 using MagicCubes.Systems;
 using MagicCubes.Systems.UI;
-using UnityEngine;
-using Voody.UniLeo;
 
 namespace MagicCubes
 {
-    public class EcsStartup : MonoBehaviour
+    public class EcsStartup : EcsStartupBase
     {
-        [SerializeField] private Configurations _configurations;
-
-        private EcsWorld _world;
-        private EcsSystems _systems;
-
-
-        private void AddInjections()
+        private protected override void AddInjections()
         {
+            base.AddInjections();
             _systems
                 .Inject(_configurations);
         }
 
-        private void AddOneFrames()
+        private protected override void AddOneFrames()
         {
             _systems
                 .OneFrame<WinEvent>()
                 .OneFrame<StartButtonClickedEvent>();
         }
 
-        private void AddSystems()
+        private protected override void AddSystems()
         {
             _systems
                // .Add(new SceneConfigValidatorSystem())
@@ -44,35 +35,6 @@ namespace MagicCubes
                 .Add(new RotationSystem())
                 .Add(new WinRotationCheckSystem())
                 .Add(new WinSystem());
-        }
-
-        private void Start()
-        {
-            _world = new();
-            _systems = new(_world);
-
-            _systems.ConvertScene();
-            AddInjections();
-            AddOneFrames();
-            AddSystems();
-            _systems.Init();
-        }
-
-        private void Update()
-        {
-            _systems.Run();
-        }
-
-        private void OnDestroy()
-        {
-            if (_systems is null)
-            {
-                return;
-            }
-            _systems.Destroy();
-            _systems = null;
-            _world.Destroy();
-            _world = null;
         }
     }
 }
