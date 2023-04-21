@@ -18,8 +18,8 @@ namespace MagicCubes.Systems.UI.GameScene
         {
             foreach(var index in _inputFilter)
             {
-                _inputFilter.Get1(index).EscapeButtonDown = Input.GetButtonDown("Escape");
-                _inputFilter.Get1(index).EscapeButtonUp = Input.GetButtonUp("Escape");
+                _inputFilter.Get1(index).EscapeButtonDown = Input.GetKeyDown(KeyCode.Escape);
+                _inputFilter.Get1(index).EscapeButtonUp = Input.GetKeyUp(KeyCode.Escape);
             }
         }
     }
