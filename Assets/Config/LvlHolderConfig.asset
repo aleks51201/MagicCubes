@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LvlHolderConfig
   m_EditorClassIdentifier: 
   _sceneNames:
-  - MenuScene
+  - SampleScene
