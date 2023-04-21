@@ -1,4 +1,6 @@
-﻿using MagicCubes.Systems;
+﻿using MagicCubes.Events.Ui;
+using MagicCubes.Systems;
+using MagicCubes.Systems.UI;
 using MagicCubes.Systems.UI.GameScene;
 
 namespace MagicCubes
@@ -12,6 +14,8 @@ namespace MagicCubes
 
         private protected override void AddOneFrames()
         {
+            _systems
+                .OneFrame<OpenedPauseMenuEvent>();
         }
 
         private protected override void AddSystems()
@@ -21,6 +25,12 @@ namespace MagicCubes
                 .Add(new CreateEntityForCubeViewSystem())
                 .Add(new InputSystem())
                 .Add(new OpenPauseMenuSystem())
+                .Add(new BackToMenuRegisterCallBackSystem())
+                .Add(new BackToMenuButtonCallbackHandlerSystem())
+                .Add(new ResetRegisterCallBackSystem())
+                .Add(new ResetButtonCallbackHandlerSystem())
+                .Add(new ResumeButtonRegisterCallBackSystem())
+                .Add(new ResumeButtonCallbackHandlerSystem())
                 .Add(new ScoringSystem())
                 .Add(new RotationSystem())
                 .Add(new WinRotationCheckSystem())
