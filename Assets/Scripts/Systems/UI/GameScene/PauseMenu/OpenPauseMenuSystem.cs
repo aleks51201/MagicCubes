@@ -58,4 +58,10 @@ namespace MagicCubes.Systems.UI.GameScene
             _oneClick = false;
         }
     }
-}
+    public sealed class BackToMenuRegisterCallBackSystem : IEcsInitSystem
+    {
+        public void Run()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
