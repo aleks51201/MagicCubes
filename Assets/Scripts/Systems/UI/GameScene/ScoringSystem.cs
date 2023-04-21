@@ -19,7 +19,7 @@ namespace MagicCubes.Systems.UI.GameScene
         {
             foreach (var index in _rotateFilter)
             {
-                _uiFilter.Get1(index).UIDocument.rootVisualElement.Q<Label>(RotationsCount).text = $"Rotations: {_rotateCount + 1}";
+                //_uiFilter.Get1(index).UIDocument.rootVisualElement.Q<Label>(RotationsCount).text = $"Rotations: {_rotateCount + 1}";
             }
         }
     }
