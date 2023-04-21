@@ -1,12 +1,14 @@
 ﻿using Leopotam.Ecs;
 using MagicCubes.Components;
 using MagicCubes.Components.Ui;
+using MagicCubes.Events.Ui;
 using UnityEngine.UIElements;
 
-namespace MagicCubes.Systems.UI.GameScene
+namespace MagicCubes.Systems.UI
 {
     public sealed class OpenPauseMenuSystem : IEcsRunSystem
     {
+        private readonly EcsWorld _ecsWorld = null;
         private readonly EcsFilter<InputComponent> _inputFilter = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
 
@@ -41,6 +43,7 @@ namespace MagicCubes.Systems.UI.GameScene
                 ChangeDisplayStatus(index, ButtonsUIHolder, DisplayStyle.Flex);
                 ChangeDisplayStatus(index, OnPauseMenu, DisplayStyle.Flex);
             }
+            _ecsWorld.NewEntity().Get<OpenedPauseMenuEvent>();
             _oneClick = true;
         }
 
@@ -58,10 +61,4 @@ namespace MagicCubes.Systems.UI.GameScene
             _oneClick = false;
         }
     }
-    public sealed class BackToMenuRegisterCallBackSystem : IEcsInitSystem
-    {
-        public void Run()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
+}
