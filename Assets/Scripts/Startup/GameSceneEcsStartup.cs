@@ -19,6 +19,8 @@ namespace MagicCubes
             _systems
                 .Add(new InitGameSceneUISystem())
                 .Add(new CreateEntityForCubeViewSystem())
+                .Add(new InputSystem())
+                .Add(new OpenPauseMenuSystem())
                 .Add(new ScoringSystem())
                 .Add(new RotationSystem())
                 .Add(new WinRotationCheckSystem())
