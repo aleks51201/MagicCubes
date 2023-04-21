@@ -11,6 +11,7 @@ namespace MagicCubes.Systems.UI.GameScene
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
 
         private const string ButtonsUIHolder = "ButtonsUIHolder";
+        private const string OnPauseMenu = "OnPauseMenu";
 
         private bool _oneClick;
 
@@ -32,13 +33,20 @@ namespace MagicCubes.Systems.UI.GameScene
             var displayStyle = _uiFilter.Get1(index).UIDocument.rootVisualElement.Q(ButtonsUIHolder).style.display;
             if (displayStyle == DisplayStyle.Flex)
             {
-                _uiFilter.Get1(index).UIDocument.rootVisualElement.Q(ButtonsUIHolder).style.display = DisplayStyle.None;
+                ChangeDisplayStatus(index, ButtonsUIHolder, DisplayStyle.None);
+                ChangeDisplayStatus(index, OnPauseMenu, DisplayStyle.None);
             }
             else
             {
-                _uiFilter.Get1(index).UIDocument.rootVisualElement.Q(ButtonsUIHolder).style.display = DisplayStyle.Flex;
+                ChangeDisplayStatus(index, ButtonsUIHolder, DisplayStyle.Flex);
+                ChangeDisplayStatus(index, OnPauseMenu, DisplayStyle.Flex);
             }
             _oneClick = true;
+        }
+
+        private void ChangeDisplayStatus(int index, string name, DisplayStyle displayStyle)
+        {
+            _uiFilter.Get1(index).UIDocument.rootVisualElement.Q(name).style.display = displayStyle;
         }
 
         private void OnEscapeButtonUp(int index)
