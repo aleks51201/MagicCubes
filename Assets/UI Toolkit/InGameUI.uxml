@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MenuUss.uss?fileID=7433441132597879392&amp;guid=8f107d5d937eed84d8ae5b2a35a88cd1&amp;type=3#MenuUss" />
     <ui:VisualElement name="Canvas" style="width: 100%; height: 100%; justify-content: center; align-items: center; visibility: hidden;">
-        <ui:VisualElement name="ButtonsUIHolder" style="width: 100%; height: 100%; align-items: center; justify-content: center; display: flex;">
+        <ui:VisualElement name="ButtonsUIHolder" style="width: 100%; height: 100%; align-items: center; justify-content: center; display: none;">
             <ui:VisualElement name="OnPauseMenu" style="width: 70%; height: 70%; min-width: auto; min-height: auto; display: none; visibility: visible; justify-content: center;">
                 <ui:GroupBox name="ButtonsHolderPause" class="ButtonsHolder" style="align-items: center; justify-content: space-around; background-color: rgba(60, 60, 60, 0.77); border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; flex-direction: row; width: 100%; height: 40%; display: flex;">
                     <ui:Button text="MENU" display-tooltip-when-elided="true" name="BackToMenu" class="MenuButton MenuButtonHover" />
@@ -31,7 +31,7 @@
                 </ui:GroupBox>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="GameUI" style="width: 100%; height: 100%; align-items: flex-end; display: none;">
+        <ui:VisualElement name="GameUI" style="width: 100%; height: 100%; align-items: flex-end; display: none; visibility: visible;">
             <ui:VisualElement name="StepsCountPanel" style="width: 25%; height: 10%;">
                 <ui:Label text="Rotations: 0" display-tooltip-when-elided="true" name="RotationsCount" style="padding-left: 0; padding-right: 5%; padding-top: 3%; padding-bottom: 0; font-size: 45px; align-items: flex-start; -unity-text-align: upper-right; -unity-font-style: bold;" />
             </ui:VisualElement>
