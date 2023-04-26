@@ -1,4 +1,5 @@
-﻿using MagicCubes.Events.Ui;
+﻿using MagicCubes.Events;
+using MagicCubes.Events.Ui;
 using MagicCubes.Systems;
 using MagicCubes.Systems.UI;
 using MagicCubes.Systems.UI.GameScene;
@@ -15,7 +16,8 @@ namespace MagicCubes
         private protected override void AddOneFrames()
         {
             _systems
-                .OneFrame<OpenedPauseMenuEvent>();
+                .OneFrame<OpenedPauseMenuEvent>()
+                .OneFrame<WinEvent>();
         }
 
         private protected override void AddSystems()
