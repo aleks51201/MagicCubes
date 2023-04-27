@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="ProgressBarStar1" class="ProgressBarStarImageHolder">
+        <ui:IMGUIContainer name="StarImage1" class="ProgressBarStarImage" />
+        <ui:Label text="&lt;10" display-tooltip-when-elided="true" name="RotationsAmountToLoseStar1" class="RotationsAmountToLoseStar1" />
+    </ui:VisualElement>
+</ui:UXML>

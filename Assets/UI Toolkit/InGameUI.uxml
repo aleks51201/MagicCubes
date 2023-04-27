@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MenuUss.uss?fileID=7433441132597879392&amp;guid=8f107d5d937eed84d8ae5b2a35a88cd1&amp;type=3#MenuUss" />
-    <ui:VisualElement name="Canvas" style="width: 100%; height: 100%; justify-content: center; align-items: center; visibility: hidden;">
+    <ui:VisualElement name="Canvas" style="width: 100%; height: 100%; justify-content: center; align-items: center; visibility: visible;">
         <ui:VisualElement name="ButtonsUIHolder" style="width: 100%; height: 100%; align-items: center; justify-content: center; display: none;">
             <ui:VisualElement name="OnPauseMenu" style="width: 70%; height: 70%; min-width: auto; min-height: auto; display: none; visibility: visible; justify-content: center;">
                 <ui:GroupBox name="ButtonsHolderPause" class="ButtonsHolder" style="align-items: center; justify-content: space-around; background-color: rgba(60, 60, 60, 0.77); border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; flex-direction: row; width: 100%; height: 40%; display: flex;">
@@ -31,9 +31,34 @@
                 </ui:GroupBox>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="GameUI" style="width: 100%; height: 100%; align-items: flex-end; display: none; visibility: hidden;">
-            <ui:VisualElement name="StepsCountPanel" style="width: 25%; height: 10%; visibility: visible;">
-                <ui:Label text="Rotations: 0" display-tooltip-when-elided="true" name="RotationsCount" style="padding-left: 0; padding-right: 5%; padding-top: 3%; padding-bottom: 0; font-size: 45px; align-items: flex-start; -unity-text-align: upper-right; -unity-font-style: bold;" />
+        <ui:VisualElement name="GameUI" style="width: 100%; height: 100%; align-items: stretch; display: none; visibility: hidden; flex-direction: row;">
+            <ui:VisualElement name="LeftSideElement" style="position: relative; height: 100%; width: 20%; left: 0;" />
+            <ui:VisualElement name="CentralElement" style="position: relative; height: 100%; width: 60%; left: 0; align-items: center;">
+                <ui:VisualElement name="IconsHolder" class="StartStyleIconsHolder OverrideStyleIconsHolder" style="align-items: flex-start; height: 100%; visibility: hidden;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="RightSideElement" style="position: relative; height: 100%; width: 20%; left: 0; flex-direction: column; justify-content: flex-start;">
+                <ui:VisualElement name="StepsCountPanel" style="width: 100%; height: 10%; visibility: visible; transform-origin: right top;">
+                    <ui:Label text="Rotations: 0" display-tooltip-when-elided="true" name="RotationsCount" style="padding-left: 0; padding-right: 5%; padding-top: 3%; padding-bottom: 0; font-size: 45px; align-items: flex-start; -unity-text-align: upper-right; -unity-font-style: bold; width: 100%; height: 100%;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ProgressBarPanel" style="height: 438px; width: 100%; margin-left: 0; margin-top: 0; flex-direction: row; margin-right: 0; margin-bottom: 0; justify-content: flex-end;">
+                    <ui:VisualElement name="StarsHolder">
+                        <ui:VisualElement name="ProgressBarStar1" class="ProgressBarStarImageHolder">
+                            <ui:IMGUIContainer name="StarImage1" class="ProgressBarStarImage" />
+                            <ui:Label text="&lt;10" display-tooltip-when-elided="true" name="RotationsAmountToLoseStar1" class="RotationsAmountToLoseStar1" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ProgressBarStar2" class="ProgressBarStarImageHolder">
+                            <ui:IMGUIContainer name="StarImage2" class="ProgressBarStarImage" />
+                            <ui:Label text="&lt;25" display-tooltip-when-elided="true" name="RotationsAmountToLoseStar2" class="RotationsAmountToLoseStar1" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="ProgressBarStar3" class="ProgressBarStarImageHolder">
+                            <ui:IMGUIContainer name="StarImage3" class="ProgressBarStarImage" />
+                            <ui:Label text="WIN" display-tooltip-when-elided="true" name="RotationsAmountToLoseStar3" class="RotationsAmountToLoseStar1" style="margin-right: 0;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="ProgressBar" class="ProgressBarBase">
+                        <ui:VisualElement name="ProgressDisplay" style="overflow: visible; background-color: rgba(63, 63, 63, 255); width: 100%; height: 107%; padding-bottom: 2px; border-bottom-width: 2px; border-bottom-color: rgba(83, 0, 245, 255); max-height: 95%;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
