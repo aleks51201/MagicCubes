@@ -1,12 +1,14 @@
 ﻿using Leopotam.Ecs;
 using MagicCubes.Components.Ui;
 using MagicCubes.Events;
+using MagicCubes.Events.Ui;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems
 {
     sealed class WinSystem : IEcsRunSystem
     {
+        private readonly EcsWorld _world = null;
         private readonly EcsFilter<WinEvent> _winFilter = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
 
@@ -23,6 +25,7 @@ namespace MagicCubes.Systems
                 {
                     btnUiHolder.style.display = DisplayStyle.Flex;
                     winPanel.style.display = DisplayStyle.Flex;
+                    _world.NewEntity().Get<OpenedWinMenuEvent>();
                 }
             }
         }
