@@ -7,5 +7,6 @@ namespace MagicCubes.Components.Ui
     {
         internal VisualElement LvlElement;
         internal string SceneName;
+        internal int Id;
     }
 }
