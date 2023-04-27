@@ -7,6 +7,7 @@ namespace MagicCubes.Systems.UI
 {
     internal sealed class LevelChooseButtonCallbackHandlerSystem : IEcsRunSystem
     {
+        private readonly EcsWorld _world = null;
         private readonly EcsFilter<LvlChooseButtonClickEvent, LevelChooseBtnComponent, LevelElementComponent> _btnFilter = null;
 
 
@@ -19,6 +20,12 @@ namespace MagicCubes.Systems.UI
                 {
                     continue;
                 }
+                CurrentLvlComponent currentLvlComponent = new()
+                {
+                    Id = _btnFilter.Get3(index).Id,
+                    SceneName = _btnFilter.Get3(index).SceneName
+                };
+                _world.NewEntity().Get<CurrentLvlComponent>() = currentLvlComponent;
                 SceneManager.LoadScene(_btnFilter.Get3(index).SceneName);
                 _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
             }
