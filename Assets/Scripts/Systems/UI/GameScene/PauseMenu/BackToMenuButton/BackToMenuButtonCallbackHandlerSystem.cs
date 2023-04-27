@@ -2,12 +2,12 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Events.Ui;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI
 {
     internal sealed class BackToMenuButtonCallbackHandlerSystem : IEcsRunSystem
     {
+        private readonly EcsWorld _world = null;
         private readonly EcsFilter<BackButtonToMenuButtonClickEvent, BackToMenuButtonComponent> _btnFilter = null;
 
         private const string MenuScene = "MenuScene";
@@ -21,8 +21,10 @@ namespace MagicCubes.Systems.UI
                 {
                     continue;
                 }
-                SceneManager.LoadScene(MenuScene);
                 _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
+                _world.NewEntity().Get<ClosedPauseMenuEvent>();
+                _world.NewEntity().Get<ClosedWinMenuEvent>();
+                SceneManager.LoadScene(MenuScene);
             }
         }
     }
