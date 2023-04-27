@@ -17,6 +17,7 @@ namespace MagicCubes
         {
             _systems
                 .OneFrame<OpenedPauseMenuEvent>()
+                .OneFrame<OpenedWinMenuEvent>()
                 .OneFrame<WinEvent>();
         }
 
@@ -26,6 +27,10 @@ namespace MagicCubes
                 .Add(new InitGameSceneUISystem())
                 .Add(new CreateEntityForCubeViewSystem())
                 .Add(new InputSystem())
+                .Add(new ScoringSystem())
+                .Add(new RotationSystem())
+                .Add(new WinRotationCheckSystem())
+                .Add(new WinSystem())
                 .Add(new OpenPauseMenuSystem())
                 .Add(new BackToMenuRegisterCallBackSystem())
                 .Add(new BackToMenuButtonCallbackHandlerSystem())
@@ -33,10 +38,8 @@ namespace MagicCubes
                 .Add(new ResetButtonCallbackHandlerSystem())
                 .Add(new ResumeButtonRegisterCallBackSystem())
                 .Add(new ResumeButtonCallbackHandlerSystem())
-                .Add(new ScoringSystem())
-                .Add(new RotationSystem())
-                .Add(new WinRotationCheckSystem())
-                .Add(new WinSystem());
+                .Add(new NextLvlButtonRegisterCallBackSystem())
+                .Add(new NextLvlButtonCallbackHandlerSystem());
         }
     }
 }
