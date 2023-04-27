@@ -7,6 +7,7 @@ namespace MagicCubes.Systems.UI
 {
     internal sealed class ResumeButtonCallbackHandlerSystem : IEcsRunSystem
     {
+        private readonly EcsWorld _world = null;
         private readonly EcsFilter<ResumeButtonClickEvent, ResumeButtonComponent> _btnFilter = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
 
@@ -25,6 +26,7 @@ namespace MagicCubes.Systems.UI
                 _uiFilter.Get1(index).UIDocument.rootVisualElement.Q(ButtonsUIHolder).style.display = DisplayStyle.None;
                 _uiFilter.Get1(index).UIDocument.rootVisualElement.Q(GameUI).style.display = DisplayStyle.Flex;
                 _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
+                _world.NewEntity().Get<ClosedPauseMenuEvent>();
             }
         }
     }
