@@ -27,7 +27,7 @@
                 <ui:GroupBox name="ButtonsHolderWin" style="align-items: center; justify-content: space-around; background-color: rgba(60, 60, 60, 0.77); border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 25px; padding-bottom: 10px; flex-direction: row; width: 100%; height: 46%; display: flex; min-width: auto; min-height: auto;">
                     <ui:Button text="MENU" display-tooltip-when-elided="true" name="BackToMenu" class="MenuButton MenuButtonHover" />
                     <ui:Button text="NEXT&#10;LEVEL" display-tooltip-when-elided="true" name="NextLevel" class="MenuButton MenuButtonHover" />
-                    <ui:Button text="REPLAY" display-tooltip-when-elided="true" name="ReplayGame" class="MenuButton MenuButtonHover" />
+                    <ui:Button text="REPLAY" display-tooltip-when-elided="true" name="ResetGame" class="MenuButton MenuButtonHover" />
                 </ui:GroupBox>
             </ui:VisualElement>
         </ui:VisualElement>
