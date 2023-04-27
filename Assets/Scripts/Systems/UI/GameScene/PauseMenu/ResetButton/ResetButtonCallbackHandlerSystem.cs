@@ -7,6 +7,7 @@ namespace MagicCubes.Systems.UI
 {
     internal sealed class ResetButtonCallbackHandlerSystem : IEcsRunSystem
     {
+        private readonly EcsWorld _world = null;
         private readonly EcsFilter<ResetButtonClickEvent, ResetButtonComponent> _btnFilter = null;
 
 
@@ -19,10 +20,12 @@ namespace MagicCubes.Systems.UI
                 {
                     continue;
                 }
+                _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
+                _world.NewEntity().Get<ClosedPauseMenuEvent>();
+                _world.NewEntity().Get<ClosedWinMenuEvent>();
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.UnloadSceneAsync(scene.name);
                 SceneManager.LoadScene(scene.name);
-                _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
             }
         }
     }
