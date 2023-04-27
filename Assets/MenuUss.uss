@@ -196,3 +196,80 @@
     height: 150px;
     background-image: url('project://database/Assets/Materials/Textures/StarObtained.png?fileID=2800000&guid=ff0a871fb661c0643b1b6d46bf6ab7ec&type=3#StarObtained');
 }
+
+.unity-progress-bar {
+}
+
+.ProgressBarStarImageHolder {
+    width: 100px;
+    height: 100px;
+    visibility: visible;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ProgressBarBase {
+    height: 323px;
+    width: 80px;
+    visibility: visible;
+    background-color: rgb(51, 142, 152);
+    overflow: hidden;
+    border-left-width: 7px;
+    border-right-width: 7px;
+    border-top-width: 7px;
+    border-bottom-width: 7px;
+    border-top-left-radius: 46px;
+    border-bottom-left-radius: 46px;
+    border-top-right-radius: 46px;
+    border-bottom-right-radius: 46px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}
+
+.ProgressBarStarImage {
+    width: 75px;
+    height: 100px;
+    background-image: url('project://database/Assets/Materials/Textures/StarObtained.png?fileID=2800000&guid=ff0a871fb661c0643b1b6d46bf6ab7ec&type=3#StarObtained');
+    transition-duration: 750ms;
+}
+
+.RotationsAmountToLoseStar1 {
+    font-size: 25px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+    margin-right: 5px;
+}
+
+.StartStyleIconsHolder {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition-duration: 1s;
+    transition-property: all;
+    transition-timing-function: ease;
+    visibility: visible;
+}
+
+.BaseIconStyle {
+    visibility: visible;
+    display: flex;
+    width: 150px;
+    height: 150px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 15px;
+    background-image: url('project://database/Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/d_stepok@2x.png?fileID=2800000&guid=3494dc956dfd7174abc07060940a2848&type=3#d_stepok@2x');
+    top: 45%;
+}
+
+.AnimatedIconStyle {
+    top: 0;
+    width: 100px;
+    height: 100px;
+    transition-timing-function: ease-out-sine;
+    transition-duration: 1250ms;
+}
