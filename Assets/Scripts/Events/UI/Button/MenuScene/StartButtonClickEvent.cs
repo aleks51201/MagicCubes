@@ -1,6 +1,6 @@
 namespace MagicCubes.Events.Ui
 {
-    internal struct StartButtonClickEvent 
+    internal struct StartButtonClickEvent
     {
     }
 }

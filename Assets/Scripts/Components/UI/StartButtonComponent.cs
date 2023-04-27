@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine.UIElements;
 
 namespace MagicCubes.Components.Ui
 {

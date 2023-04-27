@@ -3,7 +3,7 @@ using MagicCubes.Systems.UI;
 
 namespace MagicCubes
 {
-    public class MenuSceneEcsStartup: EcsStartupBase
+    public class MenuSceneEcsStartup : EcsStartupBase
     {
         private protected override void AddInjections()
         {

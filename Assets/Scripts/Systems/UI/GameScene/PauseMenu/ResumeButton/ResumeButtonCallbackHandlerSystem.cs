@@ -12,7 +12,7 @@ namespace MagicCubes.Systems.UI
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
 
         private const string ButtonsUIHolder = "ButtonsUIHolder";
-        private const string GameUI= "GameUI";
+        private const string GameUI = "GameUI";
 
         public void Run()
         {

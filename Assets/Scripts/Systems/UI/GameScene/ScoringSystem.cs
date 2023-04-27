@@ -1,5 +1,4 @@
 ﻿using Leopotam.Ecs;
-using MagicCubes.Components;
 using MagicCubes.Components.Ui;
 using MagicCubes.Events;
 using MagicCubes.Events.Ui;

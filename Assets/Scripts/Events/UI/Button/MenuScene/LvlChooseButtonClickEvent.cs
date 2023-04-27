@@ -1,6 +1,6 @@
 ﻿namespace MagicCubes.Events.Ui
 {
-    internal struct LvlChooseButtonClickEvent 
+    internal struct LvlChooseButtonClickEvent
     {
     }
 }

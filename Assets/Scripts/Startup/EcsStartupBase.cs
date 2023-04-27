@@ -32,7 +32,7 @@ namespace MagicCubes
             AddOneFrames();
             AddSystems();
             _systems.Init();
-            
+
         }
 
         private void Update()

@@ -1,9 +1,6 @@
 ﻿using Leopotam.Ecs;
 using MagicCubes.Components;
-using MagicCubes.Config;
 using MagicCubes.Tag;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace MagicCubes.Systems
 {

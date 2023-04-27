@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MagicCubes.Systems.UI.GameScene
 {
-    public sealed class InputSystem :IEcsInitSystem, IEcsRunSystem
+    public sealed class InputSystem : IEcsInitSystem, IEcsRunSystem
     {
         private readonly EcsWorld _world = null;
         private readonly EcsFilter<InputComponent> _inputFilter = null;
@@ -16,7 +16,7 @@ namespace MagicCubes.Systems.UI.GameScene
 
         public void Run()
         {
-            foreach(var index in _inputFilter)
+            foreach (var index in _inputFilter)
             {
                 _inputFilter.Get1(index).EscapeButtonDown = Input.GetKeyDown(KeyCode.Escape);
                 _inputFilter.Get1(index).EscapeButtonUp = Input.GetKeyUp(KeyCode.Escape);

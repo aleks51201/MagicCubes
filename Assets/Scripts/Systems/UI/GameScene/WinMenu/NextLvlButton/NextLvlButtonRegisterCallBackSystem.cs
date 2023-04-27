@@ -5,23 +5,23 @@ using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI
 {
-    public sealed class NextLvlButtonRegisterCallBackSystem : IEcsRunSystem 
+    public sealed class NextLvlButtonRegisterCallBackSystem : IEcsRunSystem
     {
         private readonly EcsWorld _ecsWorld = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
         private readonly EcsFilter<NextLvlButtonComponent> _nextLvlBtnFilter = null;
-        private readonly EcsFilter<OpenedWinMenuEvent> _openedWinMenuFilter= null;
-        private readonly EcsFilter<ClosedWinMenuEvent> _closedWinMenuFilter= null;
+        private readonly EcsFilter<OpenedWinMenuEvent> _openedWinMenuFilter = null;
+        private readonly EcsFilter<ClosedWinMenuEvent> _closedWinMenuFilter = null;
 
-        private const string NextLevel= "NextLevel";
+        private const string NextLevel = "NextLevel";
 
         public void Run()
         {
-            foreach(var index in _openedWinMenuFilter)
+            foreach (var index in _openedWinMenuFilter)
             {
                 Register(index);
             }
-            foreach(var index in _closedWinMenuFilter)
+            foreach (var index in _closedWinMenuFilter)
             {
                 Unregister(index);
             }
@@ -32,7 +32,7 @@ namespace MagicCubes.Systems.UI
             foreach (var indexJ in _uiFilter)
             {
                 var btns = _uiFilter.Get1(index).UIDocument.rootVisualElement.Query<Button>(NextLevel).ToList();
-                foreach(var btn in btns)
+                foreach (var btn in btns)
                 {
                     var backBtnComponent = new NextLvlButtonComponent()
                     {
@@ -51,7 +51,7 @@ namespace MagicCubes.Systems.UI
         {
             foreach (var indexJ in _uiFilter)
             {
-                foreach(var i in _nextLvlBtnFilter)
+                foreach (var i in _nextLvlBtnFilter)
                 {
                     Button btn = _nextLvlBtnFilter.Get1(i).Button;
                     var backBtnComponent = _nextLvlBtnFilter.Get1(i);

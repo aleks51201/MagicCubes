@@ -28,11 +28,11 @@ namespace MagicCubes.Systems.UI
                 }
                 _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
                 _world.NewEntity().Get<ClosedWinMenuEvent>();
-                foreach(var i in _currentFilter)
+                foreach (var i in _currentFilter)
                 {
                     Debug.Log("NextLvlButtonCallbackHandlerSystem _currentFilter");
                     int id = _currentFilter.Get1(i).Id + 1;
-                    if(id < _configurations.LvlHolderConfig.SceneNames.Length)
+                    if (id < _configurations.LvlHolderConfig.SceneNames.Length)
                     {
                         SceneManager.LoadScene(_configurations.LvlHolderConfig.SceneNames[id]);
                     }
