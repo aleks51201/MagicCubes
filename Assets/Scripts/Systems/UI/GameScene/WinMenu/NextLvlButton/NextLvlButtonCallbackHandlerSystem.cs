@@ -20,26 +20,28 @@ namespace MagicCubes.Systems.UI
         {
             foreach (var index in _btnFilter)
             {
-                Debug.Log("NextLvlButtonCallbackHandlerSystem");
-                _btnFilter.GetEntity(index).Del<NextLvlButtonToMenuButtonClickEvent>();
                 if (!_btnFilter.Get2(index).ButtonStatusHolder.IsClicked)
                 {
                     continue;
                 }
                 _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
-                _world.NewEntity().Get<ClosedWinMenuEvent>();
-                foreach (var i in _currentFilter)
+                string sceneName = SceneManager.GetActiveScene().name;
+                int numSceneName = 0;
+                for(var i = 0; i< _configurations.LvlHolderConfig.SceneNames.Length; i++)
                 {
-                    Debug.Log("NextLvlButtonCallbackHandlerSystem _currentFilter");
-                    int id = _currentFilter.Get1(i).Id + 1;
-                    if (id < _configurations.LvlHolderConfig.SceneNames.Length)
+                    if(_configurations.LvlHolderConfig.SceneNames[i] == sceneName)
                     {
-                        SceneManager.LoadScene(_configurations.LvlHolderConfig.SceneNames[id]);
+                        numSceneName = i;
+                        break;
                     }
-                    else
-                    {
-                        SceneManager.LoadScene(MenuScene);
-                    }
+                }
+                if (numSceneName + 1 < _configurations.LvlHolderConfig.SceneNames.Length && numSceneName != 0)
+                {
+                    SceneManager.LoadScene(_configurations.LvlHolderConfig.SceneNames[numSceneName + 1]);
+                }
+                else
+                {
+                    SceneManager.LoadScene(MenuScene);
                 }
             }
         }

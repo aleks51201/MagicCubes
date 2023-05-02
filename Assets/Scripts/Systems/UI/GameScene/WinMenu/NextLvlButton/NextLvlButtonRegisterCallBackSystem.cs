@@ -11,7 +11,6 @@ namespace MagicCubes.Systems.UI
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
         private readonly EcsFilter<NextLvlButtonComponent> _nextLvlBtnFilter = null;
         private readonly EcsFilter<OpenedWinMenuEvent> _openedWinMenuFilter = null;
-        private readonly EcsFilter<ClosedWinMenuEvent> _closedWinMenuFilter = null;
 
         private const string NextLevel = "NextLevel";
 
@@ -20,10 +19,6 @@ namespace MagicCubes.Systems.UI
             foreach (var index in _openedWinMenuFilter)
             {
                 Register(index);
-            }
-            foreach (var index in _closedWinMenuFilter)
-            {
-                Unregister(index);
             }
         }
 
@@ -37,27 +32,13 @@ namespace MagicCubes.Systems.UI
                     var backBtnComponent = new NextLvlButtonComponent()
                     {
                         Button = btn,
-                        ButtonStatusHolder = new()
+                        ButtonStatusHolder = new(),
+                        ButtonEventProceeder = new(btn)
                     };
-                    _ecsWorld.NewEntity().Get<NextLvlButtonComponent>() = backBtnComponent;
-                    backBtnComponent.Button = btn;
-                    btn.clicked += backBtnComponent.ButtonStatusHolder.OnClicked;
-                    btn.clicked += OnClick;
-                }
-            }
-        }
 
-        private void Unregister(int index)
-        {
-            foreach (var indexJ in _uiFilter)
-            {
-                foreach (var i in _nextLvlBtnFilter)
-                {
-                    Button btn = _nextLvlBtnFilter.Get1(i).Button;
-                    var backBtnComponent = _nextLvlBtnFilter.Get1(i);
-                    btn.clicked -= backBtnComponent.ButtonStatusHolder.OnClicked;
-                    btn.clicked -= OnClick;
-                    _nextLvlBtnFilter.GetEntity(i).Destroy();
+                    backBtnComponent.ButtonEventProceeder.Subscribe(backBtnComponent.ButtonStatusHolder.OnClicked);
+                    backBtnComponent.ButtonEventProceeder.Subscribe(OnClick);
+                    _ecsWorld.NewEntity().Get<NextLvlButtonComponent>() = backBtnComponent;
                 }
             }
         }
