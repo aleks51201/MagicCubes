@@ -18,7 +18,9 @@ namespace MagicCubes
             _systems
                 .OneFrame<OpenedPauseMenuEvent>()
                 .OneFrame<OpenedWinMenuEvent>()
-                .OneFrame<WinEvent>();
+                .OneFrame<WinEvent>()
+                .OneFrame<ClosedPauseMenuEvent>()
+                .OneFrame<ClosedWinMenuEvent>();
         }
 
         private protected override void AddSystems()
@@ -30,16 +32,26 @@ namespace MagicCubes
                 .Add(new ScoringSystem())
                 .Add(new RotationSystem())
                 .Add(new WinRotationCheckSystem())
-                .Add(new WinSystem())
-                .Add(new OpenPauseMenuSystem())
+
+                .Add(new PauseMenuSystem())
+                .Add(new OpenWinPanelSystem())
+
                 .Add(new BackToMenuRegisterCallBackSystem())
-                .Add(new BackToMenuButtonCallbackHandlerSystem())
-                .Add(new ResetRegisterCallBackSystem())
-                .Add(new ResetButtonCallbackHandlerSystem())
                 .Add(new ResumeButtonRegisterCallBackSystem())
-                .Add(new ResumeButtonCallbackHandlerSystem())
+                .Add(new ResetRegisterCallBackSystem())
                 .Add(new NextLvlButtonRegisterCallBackSystem())
-                .Add(new NextLvlButtonCallbackHandlerSystem());
+
+                .Add(new BackToMenuButtonCallbackHandlerSystem())
+                .Add(new ResumeButtonCallbackHandlerSystem())
+                .Add(new ResetButtonCallbackHandlerSystem())
+                .Add(new NextLvlButtonCallbackHandlerSystem())
+
+                .Add(new CloseWinPanelSystem())
+
+                .Add(new BackToMenuUnregisterCallBackSystem())
+                .Add(new ResumeButtonUnregisterCallBackSystem())
+                .Add(new ResetUnregisterCallBackSystem())
+                .Add(new NextLvlButtonUnregisterCallBackSystem());
         }
     }
 }
