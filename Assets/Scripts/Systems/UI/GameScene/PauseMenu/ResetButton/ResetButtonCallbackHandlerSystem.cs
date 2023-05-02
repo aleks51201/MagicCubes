@@ -15,14 +15,11 @@ namespace MagicCubes.Systems.UI
         {
             foreach (var index in _btnFilter)
             {
-                _btnFilter.GetEntity(index).Del<ResumeButtonClickEvent>();
                 if (!_btnFilter.Get2(index).ButtonStatusHolder.IsClicked)
                 {
                     continue;
                 }
                 _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
-                _world.NewEntity().Get<ClosedPauseMenuEvent>();
-                _world.NewEntity().Get<ClosedWinMenuEvent>();
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.UnloadSceneAsync(scene.name);
                 SceneManager.LoadScene(scene.name);

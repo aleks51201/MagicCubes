@@ -12,8 +12,6 @@ namespace MagicCubes.Systems.UI
         private readonly EcsFilter<ResetButtonComponent> _resetBtnFilter = null;
         private readonly EcsFilter<OpenedPauseMenuEvent> _openedPauseMenuFilter = null;
         private readonly EcsFilter<OpenedWinMenuEvent> _openedWinMenuFilter = null;
-        private readonly EcsFilter<ClosedPauseMenuEvent> _closedPauseMenuFilter = null;
-        private readonly EcsFilter<ClosedWinMenuEvent> _closedWinMenuFilter = null;
 
         private const string ResetGame = "ResetGame";
 
@@ -27,14 +25,6 @@ namespace MagicCubes.Systems.UI
             {
                 Register(index);
             }
-            foreach (var index in _closedPauseMenuFilter)
-            {
-                Unregister(index);
-            }
-            foreach (var index in _closedWinMenuFilter)
-            {
-                Unregister(index);
-            }
         }
 
         private void Register(int index)
@@ -47,26 +37,12 @@ namespace MagicCubes.Systems.UI
                     var resetComponent = new ResetButtonComponent()
                     {
                         Button = btn,
-                        ButtonStatusHolder = new()
+                        ButtonStatusHolder = new(),
+                        ButtonEventProceeder = new(btn)
                     };
+                    resetComponent.ButtonEventProceeder.Subscribe(resetComponent.ButtonStatusHolder.OnClicked);
+                    resetComponent.ButtonEventProceeder.Subscribe(OnClick);
                     _ecsWorld.NewEntity().Get<ResetButtonComponent>() = resetComponent;
-                    resetComponent.Button = btn;
-                    btn.clicked += resetComponent.ButtonStatusHolder.OnClicked;
-                    btn.clicked += OnClick;
-                }
-            }
-        }
-
-        private void Unregister(int index)
-        {
-            foreach (var indexJ in _uiFilter)
-            {
-                foreach (var i in _resetBtnFilter)
-                {
-                    Button btn = _resetBtnFilter.Get1(i).Button;
-                    var resetComponent = _resetBtnFilter.Get1(i);
-                    btn.clicked -= resetComponent.ButtonStatusHolder.OnClicked;
-                    btn.clicked -= OnClick;
                 }
             }
         }
