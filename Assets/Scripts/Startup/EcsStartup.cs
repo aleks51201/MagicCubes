@@ -34,7 +34,7 @@ namespace MagicCubes
                 .Add(new CreateEntityForCubeViewSystem())
                 .Add(new RotationSystem())
                 .Add(new WinRotationCheckSystem())
-                .Add(new WinSystem());
+                .Add(new OpenWinPanelSystem());
         }
     }
 }
