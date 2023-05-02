@@ -16,14 +16,11 @@ namespace MagicCubes.Systems.UI
         {
             foreach (var index in _btnFilter)
             {
-                _btnFilter.GetEntity(index).Del<BackButtonToMenuButtonClickEvent>();
                 if (!_btnFilter.Get2(index).ButtonStatusHolder.IsClicked)
                 {
                     continue;
                 }
                 _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
-                _world.NewEntity().Get<ClosedPauseMenuEvent>();
-                _world.NewEntity().Get<ClosedWinMenuEvent>();
                 SceneManager.LoadScene(MenuScene);
             }
         }

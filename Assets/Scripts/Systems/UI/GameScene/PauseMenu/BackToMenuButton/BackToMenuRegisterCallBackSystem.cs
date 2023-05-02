@@ -12,8 +12,6 @@ namespace MagicCubes.Systems.UI
         private readonly EcsFilter<BackToMenuButtonComponent> _backMenuBtnFilter = null;
         private readonly EcsFilter<OpenedPauseMenuEvent> _openedPauseMenuFilter = null;
         private readonly EcsFilter<OpenedWinMenuEvent> _openedWinMenuFilter = null;
-        private readonly EcsFilter<ClosedPauseMenuEvent> _closedPauseMenuFilter = null;
-        private readonly EcsFilter<ClosedWinMenuEvent> _closedWinMenuFilter = null;
 
         private const string BackToMenu = "BackToMenu";
 
@@ -25,16 +23,7 @@ namespace MagicCubes.Systems.UI
             }
             foreach (var index in _openedWinMenuFilter)
             {
-                //_openedPauseMenuFilter.GetEntity(index).Del<OpenedWinMenuEvent>();
                 Register(index);
-            }
-            foreach (var index in _closedPauseMenuFilter)
-            {
-                Unregister(index);
-            }
-            foreach (var index in _closedWinMenuFilter)
-            {
-                Unregister(index);
             }
         }
 
@@ -48,27 +37,12 @@ namespace MagicCubes.Systems.UI
                     var backBtnComponent = new BackToMenuButtonComponent()
                     {
                         Button = btn,
-                        ButtonStatusHolder = new()
+                        ButtonStatusHolder = new(),
+                        ButtonEventProceeder = new(btn)
                     };
+                    backBtnComponent.ButtonEventProceeder.Subscribe(backBtnComponent.ButtonStatusHolder.OnClicked);
+                    backBtnComponent.ButtonEventProceeder.Subscribe(OnClick);
                     _ecsWorld.NewEntity().Get<BackToMenuButtonComponent>() = backBtnComponent;
-                    backBtnComponent.Button = btn;
-                    btn.clicked += backBtnComponent.ButtonStatusHolder.OnClicked;
-                    btn.clicked += OnClick;
-                }
-            }
-        }
-
-        private void Unregister(int index)
-        {
-            foreach (var indexJ in _uiFilter)
-            {
-                foreach (var i in _backMenuBtnFilter)
-                {
-                    Button btn = _backMenuBtnFilter.Get1(i).Button;
-                    var backBtnComponent = _backMenuBtnFilter.Get1(i);
-                    btn.clicked -= backBtnComponent.ButtonStatusHolder.OnClicked;
-                    btn.clicked -= OnClick;
-                    _backMenuBtnFilter.GetEntity(i).Destroy();
                 }
             }
         }
