@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI
 {
-    public sealed class OpenPauseMenuSystem : IEcsRunSystem
+    public sealed class PauseMenuSystem : IEcsRunSystem
     {
         private readonly EcsWorld _ecsWorld = null;
         private readonly EcsFilter<InputComponent> _inputFilter = null;
@@ -14,6 +14,7 @@ namespace MagicCubes.Systems.UI
 
         private const string ButtonsUIHolder = "ButtonsUIHolder";
         private const string OnPauseMenu = "OnPauseMenu";
+        private const string GameUI = "GameUI";
 
         private bool _oneClick;
 
@@ -37,13 +38,16 @@ namespace MagicCubes.Systems.UI
             {
                 ChangeDisplayStatus(index, ButtonsUIHolder, DisplayStyle.None);
                 ChangeDisplayStatus(index, OnPauseMenu, DisplayStyle.None);
+                ChangeDisplayStatus(index, GameUI, DisplayStyle.Flex);
+                _ecsWorld.NewEntity().Get<ClosedPauseMenuEvent>();
             }
             else
             {
                 ChangeDisplayStatus(index, ButtonsUIHolder, DisplayStyle.Flex);
                 ChangeDisplayStatus(index, OnPauseMenu, DisplayStyle.Flex);
+                ChangeDisplayStatus(index, GameUI, DisplayStyle.None);
+                _ecsWorld.NewEntity().Get<OpenedPauseMenuEvent>();
             }
-            _ecsWorld.NewEntity().Get<OpenedPauseMenuEvent>();
             _oneClick = true;
         }
 
