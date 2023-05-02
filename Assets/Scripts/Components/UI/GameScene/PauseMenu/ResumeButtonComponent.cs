@@ -6,5 +6,6 @@ namespace MagicCubes.Components.Ui
     {
         internal Button Button;
         internal ButtonStatusHolder ButtonStatusHolder;
+        internal ButtonEventProceeder ButtonEventProceeder;
     }
 }

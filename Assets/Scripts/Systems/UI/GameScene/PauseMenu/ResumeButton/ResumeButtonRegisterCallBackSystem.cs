@@ -11,19 +11,15 @@ namespace MagicCubes.Systems.UI
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
         private readonly EcsFilter<ResumeButtonComponent> _resumeBtnFilter = null;
         private readonly EcsFilter<OpenedPauseMenuEvent> _openedPauseMenuFilter = null;
-        private readonly EcsFilter<ClosedPauseMenuEvent> _closedPauseMenuFilter = null;
 
         private const string ResumeGame = "ResumeGame";
+
 
         public void Run()
         {
             foreach (var index in _openedPauseMenuFilter)
             {
                 Register(index);
-            }
-            foreach (var index in _closedPauseMenuFilter)
-            {
-                Unregister(index);
             }
         }
 
@@ -35,26 +31,12 @@ namespace MagicCubes.Systems.UI
                 var resumeBtnComponent = new ResumeButtonComponent()
                 {
                     Button = btn,
-                    ButtonStatusHolder = new()
+                    ButtonStatusHolder = new(),
+                    ButtonEventProceeder = new(btn)
                 };
+                resumeBtnComponent.ButtonEventProceeder.Subscribe(resumeBtnComponent.ButtonStatusHolder.OnClicked);
+                resumeBtnComponent.ButtonEventProceeder.Subscribe(OnClick);
                 _ecsWorld.NewEntity().Get<ResumeButtonComponent>() = resumeBtnComponent;
-                resumeBtnComponent.Button = btn;
-                btn.clicked += resumeBtnComponent.ButtonStatusHolder.OnClicked;
-                btn.clicked += OnClick;
-            }
-        }
-
-        private void Unregister(int index)
-        {
-            foreach (var indexJ in _uiFilter)
-            {
-                foreach (var i in _resumeBtnFilter)
-                {
-                    Button btn = _resumeBtnFilter.Get1(i).Button;
-                    var resumeBtnComponent = _resumeBtnFilter.Get1(i);
-                    btn.clicked -= resumeBtnComponent.ButtonStatusHolder.OnClicked;
-                    btn.clicked -= OnClick;
-                }
             }
         }
 
