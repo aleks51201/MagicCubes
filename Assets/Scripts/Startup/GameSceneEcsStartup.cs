@@ -27,6 +27,7 @@ namespace MagicCubes
         {
             _systems
                 .Add(new InitGameSceneUISystem())
+                .Add(new LvlInitSystem())
                 .Add(new CreateEntityForCubeViewSystem())
                 .Add(new InputSystem())
                 .Add(new ScoringSystem())

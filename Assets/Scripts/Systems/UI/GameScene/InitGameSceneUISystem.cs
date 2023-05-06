@@ -1,11 +1,14 @@
 ﻿using Leopotam.Ecs;
 using MagicCubes.Components.Ui;
+using MagicCubes.Config;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
 {
     public sealed class InitGameSceneUISystem : IEcsInitSystem
     {
+        private readonly EcsWorld _world;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
 
         private const string GameUI = "GameUI";

@@ -6,21 +6,28 @@ using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
 {
-    public sealed class ScoringSystem : IEcsRunSystem
+    public sealed class ScoringSystem : IEcsRunSystem, IEcsInitSystem
     {
         private readonly EcsFilter<RotateEvent> _rotateFilter = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
         private readonly EcsFilter<OpenedWinMenuEvent> _openWinMenuFilter = null;
+        private readonly EcsFilter<CurrentLvlComponent> _currenLvlFilter = null;
 
         private const string RotationsCount = "RotationsCount";
 
         private int _rotateCount = 0;
+
+        public void Init()
+        {
+            UpdateLvlScore(0);
+        }
 
         public void Run()
         {
             foreach (var index in _rotateFilter)
             {
                 _rotateCount++;
+                UpdateLvlScore(_rotateCount);
                 UpdateRotationsCount();
             }
             foreach (var i in _openWinMenuFilter)
@@ -38,6 +45,14 @@ namespace MagicCubes.Systems.UI.GameScene
                 {
                     label.text = $"Rotations: {_rotateCount}";
                 }
+            }
+        }
+
+        private void UpdateLvlScore(int score)
+        {
+            foreach(var i in _currenLvlFilter)
+            {
+                _currenLvlFilter.Get1(i).CurrentScore = score;
             }
         }
     }
