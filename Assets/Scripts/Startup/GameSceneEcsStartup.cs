@@ -31,6 +31,7 @@ namespace MagicCubes
                 .Add(new CreateEntityForCubeViewSystem())
                 .Add(new InputSystem())
                 .Add(new ScoringSystem())
+                .Add(new ProgressBarSystem())
                 .Add(new RotationSystem())
                 .Add(new WinRotationCheckSystem())
 
