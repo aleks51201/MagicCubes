@@ -2,7 +2,6 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using MagicCubes.Events.Ui;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace MagicCubes.Systems.UI
@@ -27,9 +26,9 @@ namespace MagicCubes.Systems.UI
                 _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
                 string sceneName = SceneManager.GetActiveScene().name;
                 int numSceneName = 0;
-                for(var i = 0; i< _configurations.LvlHolderConfig.LvlData.Length; i++)
+                for (var i = 0; i < _configurations.LvlHolderConfig.LvlData.Length; i++)
                 {
-                    if(_configurations.LvlHolderConfig.LvlData[i].SceneName == sceneName)
+                    if (_configurations.LvlHolderConfig.LvlData[i].SceneName == sceneName)
                     {
                         numSceneName = i;
                         break;

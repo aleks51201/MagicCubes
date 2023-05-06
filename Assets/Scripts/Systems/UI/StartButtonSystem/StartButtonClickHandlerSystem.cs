@@ -24,7 +24,7 @@ namespace MagicCubes.Systems.UI
                     {
                         continue;
                     }
-                    foreach(var i in _uiFilter)
+                    foreach (var i in _uiFilter)
                     {
                         _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(StartScreen).style.display = DisplayStyle.None;
                     }

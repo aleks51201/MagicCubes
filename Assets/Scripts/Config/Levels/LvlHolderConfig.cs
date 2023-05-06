@@ -9,7 +9,7 @@ namespace MagicCubes.Config
         [SerializeField] private LvlData[] _lvlData;
 
 
-        public LvlData[] LvlData => _lvlData; 
+        public LvlData[] LvlData => _lvlData;
     }
 
     [Serializable]

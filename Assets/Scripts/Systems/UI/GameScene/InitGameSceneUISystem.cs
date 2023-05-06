@@ -1,7 +1,5 @@
 ﻿using Leopotam.Ecs;
 using MagicCubes.Components.Ui;
-using MagicCubes.Config;
-using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene

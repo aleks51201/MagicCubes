@@ -13,12 +13,12 @@ namespace MagicCubes.Systems.UI.GameScene
 
         public void Init()
         {
-             ref var currentLvlComponent = ref _world.NewEntity().Get<CurrentLvlComponent>();
+            ref var currentLvlComponent = ref _world.NewEntity().Get<CurrentLvlComponent>();
             currentLvlComponent.SceneName = SceneManager.GetActiveScene().name;
             int id = 0;
-            foreach(LvlData lvlData in _configurations.LvlHolderConfig.LvlData)
+            foreach (LvlData lvlData in _configurations.LvlHolderConfig.LvlData)
             {
-                if(lvlData.SceneName == currentLvlComponent.SceneName)
+                if (lvlData.SceneName == currentLvlComponent.SceneName)
                 {
                     currentLvlComponent.Id = id;
                     return;

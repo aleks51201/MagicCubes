@@ -35,7 +35,7 @@ namespace MagicCubes.Components.Ui
 
         internal void UnsubscribeAll()
         {
-            for(var i = _actions.Count - 1; i>= 0; i--)
+            for (var i = _actions.Count - 1; i >= 0; i--)
             {
                 Unsubscribe(_actions[i]);
             }

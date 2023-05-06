@@ -50,7 +50,7 @@ namespace MagicCubes.Systems.UI.GameScene
 
         private void UpdateLvlScore(int score)
         {
-            foreach(var i in _currenLvlFilter)
+            foreach (var i in _currenLvlFilter)
             {
                 _currenLvlFilter.Get1(i).CurrentScore = score;
             }
