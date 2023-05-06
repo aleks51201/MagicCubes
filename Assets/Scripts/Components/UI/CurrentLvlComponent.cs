@@ -4,5 +4,6 @@
     {
         internal int Id;
         internal string SceneName;
+        internal int CurrentScore;
     }
 }
