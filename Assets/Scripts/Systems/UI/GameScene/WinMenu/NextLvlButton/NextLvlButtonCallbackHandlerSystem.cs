@@ -27,17 +27,17 @@ namespace MagicCubes.Systems.UI
                 _btnFilter.Get2(index).ButtonStatusHolder.StatusReset();
                 string sceneName = SceneManager.GetActiveScene().name;
                 int numSceneName = 0;
-                for(var i = 0; i< _configurations.LvlHolderConfig.SceneNames.Length; i++)
+                for(var i = 0; i< _configurations.LvlHolderConfig.LvlData.Length; i++)
                 {
-                    if(_configurations.LvlHolderConfig.SceneNames[i] == sceneName)
+                    if(_configurations.LvlHolderConfig.LvlData[i].SceneName == sceneName)
                     {
                         numSceneName = i;
                         break;
                     }
                 }
-                if (numSceneName + 1 < _configurations.LvlHolderConfig.SceneNames.Length && numSceneName != 0)
+                if (numSceneName + 1 < _configurations.LvlHolderConfig.LvlData.Length && numSceneName != 0)
                 {
-                    SceneManager.LoadScene(_configurations.LvlHolderConfig.SceneNames[numSceneName + 1]);
+                    SceneManager.LoadScene(_configurations.LvlHolderConfig.LvlData[numSceneName + 1].SceneName);
                 }
                 else
                 {

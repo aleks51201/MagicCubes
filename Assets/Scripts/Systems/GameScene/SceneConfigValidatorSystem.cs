@@ -11,12 +11,12 @@ namespace MagicCubes.Systems
 
         public void Init()
         {
-            foreach (string sceneName in _configurations.LvlHolderConfig.SceneNames)
+            foreach (LvlData lvlData in _configurations.LvlHolderConfig.LvlData)
             {
-                var scene = SceneManager.GetSceneByName(sceneName);
-                if (scene.name != sceneName)
+                var scene = SceneManager.GetSceneByName(lvlData.SceneName);
+                if (scene.name != lvlData.SceneName)
                 {
-                    throw new ArgumentException($"Scene with name = {sceneName} not exist");
+                    throw new ArgumentException($"Scene with name = {lvlData.SceneName} not exist");
                 }
             }
         }

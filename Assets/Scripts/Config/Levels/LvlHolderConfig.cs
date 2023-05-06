@@ -1,13 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace MagicCubes.Config
 {
     [CreateAssetMenu(fileName = "LvlHolderConfig", menuName = "Config/LvlHolderConfig")]
     public class LvlHolderConfig : ScriptableObject
     {
-        [SerializeField] private string[] _sceneNames;
+        [SerializeField] private LvlData[] _lvlData;
 
 
-        public string[] SceneNames => _sceneNames;
+        public LvlData[] LvlData => _lvlData; 
+    }
+
+    [Serializable]
+    public class LvlData
+    {
+        public string SceneName;
+        public int NumStepForLoseSecondStar;
+        public int NumStepForLoseThirdStar;
     }
 }
