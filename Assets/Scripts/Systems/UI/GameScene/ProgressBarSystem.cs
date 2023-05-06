@@ -32,11 +32,13 @@ namespace MagicCubes.Systems.UI.GameScene
 
                         if (currentScore > numStepForLoseThirdStar && currentScore < numStepForLoseSecondStar)
                         {
-                            _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressDisplay).style.height = Length.Percent((currentScore - numStepForLoseThirdStar) / (numStepForLoseSecondStar - numStepForLoseThirdStar) * 100f);
+                            Length percent = Length.Percent((currentScore - numStepForLoseThirdStar) / (numStepForLoseSecondStar - numStepForLoseThirdStar) * 100f);
+                            _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressDisplay).style.height = percent;
                         }
                         else if (currentScore < numStepForLoseThirdStar)
                         {
-                            _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressDisplay).style.height = Length.Percent(currentScore / numStepForLoseThirdStar * 100f);
+                            Length percent = Length.Percent(currentScore / numStepForLoseThirdStar * 100f);
+                            _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressDisplay).style.height = percent;
                         }
                         else
                         {
