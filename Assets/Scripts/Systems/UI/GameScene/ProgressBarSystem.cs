@@ -2,11 +2,12 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using MagicCubes.Events;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
 {
-    public sealed class ProgressBarSystem : IEcsRunSystem
+    public sealed class ProgressBarSystem : IEcsRunSystem, IEcsInitSystem
     {
         private readonly EcsFilter<RotateEvent> _rotateFilter = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
@@ -15,6 +16,14 @@ namespace MagicCubes.Systems.UI.GameScene
 
         private const string ProgressDisplay = "ProgressDisplay";
 
+
+        public void Init()
+        {
+            foreach(var i in _uiFilter)
+            {
+                _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressDisplay).style.height = Length.Percent(0);
+            }
+        }
 
         public void Run()
         {
