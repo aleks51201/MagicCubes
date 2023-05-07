@@ -2,7 +2,6 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using MagicCubes.Events;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
@@ -19,7 +18,7 @@ namespace MagicCubes.Systems.UI.GameScene
 
         public void Init()
         {
-            foreach(var i in _uiFilter)
+            foreach (var i in _uiFilter)
             {
                 _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressDisplay).style.height = Length.Percent(0);
             }
