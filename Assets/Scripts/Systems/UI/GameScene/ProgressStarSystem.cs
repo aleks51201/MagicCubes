@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
 {
-    public sealed class ProgressStarSystem : IEcsRunSystem
+    public sealed class ProgressStarSystem : IEcsRunSystem, IEcsInitSystem
     {
         private readonly EcsFilter<RotateEvent> _rotateFilter = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
@@ -23,6 +23,22 @@ namespace MagicCubes.Systems.UI.GameScene
         private const string RotationsAmountToLoseStar2 = "RotationsAmountToLoseStar2";
         private const string RotationsAmountToLoseStar3 = "RotationsAmountToLoseStar3";
 
+
+        public void Init()
+        {
+            foreach(var i in _uiFilter)
+            {
+                _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(StarImage1).style.display = DisplayStyle.Flex;
+                _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(StarImage2).style.display = DisplayStyle.Flex;
+                _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(StarImage3).style.display = DisplayStyle.Flex;
+                foreach(var j in _currenLvlFilter)
+                {
+                    var id = _currenLvlFilter.Get1(j).Id;
+                    _uiFilter.Get1(i).UIDocument.rootVisualElement.Q<Label>(RotationsAmountToLoseStar1).text =$"{_configurations.LvlHolderConfig.LvlData[id].NumStepForLoseThirdStar}";
+                    _uiFilter.Get1(i).UIDocument.rootVisualElement.Q<Label>(RotationsAmountToLoseStar2).text =$"{_configurations.LvlHolderConfig.LvlData[id].NumStepForLoseSecondStar}";
+                }
+                            }
+        }
 
         public void Run()
         {
