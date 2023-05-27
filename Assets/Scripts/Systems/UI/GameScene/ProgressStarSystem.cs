@@ -2,6 +2,7 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using MagicCubes.Events;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
@@ -34,8 +35,11 @@ namespace MagicCubes.Systems.UI.GameScene
                 foreach (var j in _currenLvlFilter)
                 {
                     var id = _currenLvlFilter.Get1(j).Id;
-                    _uiFilter.Get1(i).UIDocument.rootVisualElement.Q<Label>(RotationsAmountToLoseStar1).text = $"{_configurations.LvlHolderConfig.LvlData[id].NumStepForLoseThirdStar}";
-                    _uiFilter.Get1(i).UIDocument.rootVisualElement.Q<Label>(RotationsAmountToLoseStar2).text = $"{_configurations.LvlHolderConfig.LvlData[id].NumStepForLoseSecondStar}";
+                    _uiFilter.Get1(i).UIDocument.rootVisualElement.Q<Label>(RotationsAmountToLoseStar1).text
+                        = $"{_configurations.LvlHolderConfig.LvlData[id].NumStepForLoseThirdStar}";
+
+                    _uiFilter.Get1(i).UIDocument.rootVisualElement.Q<Label>(RotationsAmountToLoseStar2).text
+                        = $"{_configurations.LvlHolderConfig.LvlData[id].NumStepForLoseSecondStar}";
                 }
             }
         }
@@ -61,14 +65,14 @@ namespace MagicCubes.Systems.UI.GameScene
                         if (currentScore > numStepForLoseSecondStar)
                         {
                             VisualElement visualElement = _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressBarStar2);
-                            VisualElement starImage = visualElement.Q(StarImage2);
-                            starImage.style.display = DisplayStyle.None;
+                            var starImage = visualElement.Q(StarImage2);
+                            starImage.style.backgroundImage = _configurations.LvlHolderConfig.LvlData[0].Texture2D;
                         }
                         else if (currentScore > numStepForLoseThirdStar)
                         {
                             VisualElement visualElement = _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressBarStar1);
-                            VisualElement starImage = visualElement.Q(StarImage1);
-                            starImage.style.display = DisplayStyle.None;
+                            var starImage = visualElement.Q(StarImage1);
+                            starImage.style.backgroundImage = _configurations.LvlHolderConfig.LvlData[0].Texture2D;
                         }
                     }
                 }
