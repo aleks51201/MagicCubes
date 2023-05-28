@@ -2,7 +2,6 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using MagicCubes.Events;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
