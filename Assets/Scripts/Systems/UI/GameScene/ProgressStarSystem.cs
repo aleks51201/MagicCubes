@@ -3,14 +3,17 @@ using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using MagicCubes.Events;
 using UnityEngine.UIElements;
+using System;
 
 namespace MagicCubes.Systems.UI.GameScene
 {
     public sealed class ProgressStarSystem : IEcsRunSystem, IEcsInitSystem
     {
+        private readonly EcsWorld _world = null;
         private readonly EcsFilter<RotateEvent> _rotateFilter = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
         private readonly EcsFilter<CurrentLvlComponent> _currenLvlFilter = null;
+        private readonly EcsFilter<StarHolderComponent> _starFilter = null;
         private readonly Configurations _configurations;
 
         private const string ProgressBarStar1 = "ProgressBarStar1";
@@ -28,6 +31,9 @@ namespace MagicCubes.Systems.UI.GameScene
         {
             foreach (var i in _uiFilter)
             {
+                ref var starHolder = ref _world.NewEntity().Get<StarHolderComponent>();
+                SetCountStar(3);
+
                 _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(StarImage1).style.display = DisplayStyle.Flex;
                 _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(StarImage2).style.display = DisplayStyle.Flex;
                 _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(StarImage3).style.display = DisplayStyle.Flex;
@@ -66,15 +72,32 @@ namespace MagicCubes.Systems.UI.GameScene
                             VisualElement visualElement = _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressBarStar2);
                             var starImage = visualElement.Q(StarImage2);
                             starImage.style.backgroundImage = _configurations.LvlHolderConfig.LvlData[0].Texture2D;
+                            SetCountStar(1);
                         }
                         else if (currentScore > numStepForLoseThirdStar)
                         {
                             VisualElement visualElement = _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressBarStar1);
                             var starImage = visualElement.Q(StarImage1);
                             starImage.style.backgroundImage = _configurations.LvlHolderConfig.LvlData[0].Texture2D;
+                            SetCountStar(2);
                         }
                     }
                 }
+            }
+        }
+
+        private void SetCountStar(int countStar)
+        {
+            int n = 0;
+            foreach(var i in _starFilter)
+            {
+                ref var starHolder = ref _starFilter.Get1(i);
+                starHolder.StarCount = countStar;
+                n++;
+            }
+            if(n ==0)
+            {
+                throw new Exception($"Component '{nameof(StarHolderComponent)}' not found");
             }
         }
     }
