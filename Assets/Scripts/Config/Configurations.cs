@@ -17,7 +17,10 @@ namespace MagicCubes.Config
     [Serializable]
     public class TextureHolder
     {
+        [Header("Stars")]
         public Texture2D ObtainedStar;
+        [Space]
+        [Header("Elements")]
         public Texture2D Air;
         public Texture2D Fire;
         public Texture2D Nature;
