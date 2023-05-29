@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace MagicCubes.Config
 {
@@ -6,8 +7,20 @@ namespace MagicCubes.Config
     public class Configurations : ScriptableObject
     {
         [SerializeField] private LvlHolderConfig _lvlHolderConfig;
+        [SerializeField] private TextureHolder _textureHolder;
 
 
         public LvlHolderConfig LvlHolderConfig => _lvlHolderConfig;
+        public TextureHolder TextureHolder => _textureHolder;
+    }
+
+    [Serializable]
+    public class TextureHolder
+    {
+        public Texture2D ObtainedStar;
+        public Texture2D Air;
+        public Texture2D Fire;
+        public Texture2D Nature;
+        public Texture2D Water;
     }
 }
