@@ -39,6 +39,8 @@ namespace MagicCubes
                 .Add(new PauseMenuSystem())
                 .Add(new OpenWinPanelSystem())
 
+                .Add(new FilStarSystem())
+
                 .Add(new BackToMenuRegisterCallBackSystem())
                 .Add(new ResumeButtonRegisterCallBackSystem())
                 .Add(new ResetRegisterCallBackSystem())
