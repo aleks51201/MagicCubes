@@ -18,5 +18,14 @@ namespace MagicCubes.Config
         public string SceneName;
         public int NumStepForLoseSecondStar;
         public int NumStepForLoseThirdStar;
+        public Elements[] Elements;
+    }
+
+    public enum Elements
+    {
+        Air = 1,
+        Fire = 2,
+        Nature = 3,
+        Water = 4,
     }
 }
