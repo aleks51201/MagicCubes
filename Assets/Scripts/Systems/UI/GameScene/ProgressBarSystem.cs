@@ -2,6 +2,8 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using MagicCubes.Events;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
@@ -18,7 +20,7 @@ namespace MagicCubes.Systems.UI.GameScene
 
         public void Init()
         {
-            foreach (var i in _uiFilter)
+            foreach (int i in _uiFilter)
             {
                 _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressDisplay).style.height = Length.Percent(0);
             }
@@ -26,11 +28,11 @@ namespace MagicCubes.Systems.UI.GameScene
 
         public void Run()
         {
-            foreach (var index in _rotateFilter)
+            foreach (int index in _rotateFilter)
             {
-                foreach (var i in _uiFilter)
+                foreach (int i in _uiFilter)
                 {
-                    foreach (var j in _currenLvlFilter)
+                    foreach (int j in _currenLvlFilter)
                     {
                         CurrentLvlComponent currentLvlComponent = _currenLvlFilter.Get1(j);
                         int id = currentLvlComponent.Id;
