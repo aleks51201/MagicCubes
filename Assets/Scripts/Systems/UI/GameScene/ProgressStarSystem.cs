@@ -71,14 +71,14 @@ namespace MagicCubes.Systems.UI.GameScene
                         {
                             VisualElement visualElement = _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressBarStar2);
                             var starImage = visualElement.Q(StarImage2);
-                            starImage.style.backgroundImage = _configurations.LvlHolderConfig.LvlData[0].Texture2D;
+                            starImage.style.backgroundImage = _configurations.TextureHolder.ObtainedStar;
                             SetCountStar(1);
                         }
                         else if (currentScore > numStepForLoseThirdStar)
                         {
                             VisualElement visualElement = _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(ProgressBarStar1);
                             var starImage = visualElement.Q(StarImage1);
-                            starImage.style.backgroundImage = _configurations.LvlHolderConfig.LvlData[0].Texture2D;
+                            starImage.style.backgroundImage = _configurations.TextureHolder.ObtainedStar;
                             SetCountStar(2);
                         }
                     }

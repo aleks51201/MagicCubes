@@ -18,6 +18,5 @@ namespace MagicCubes.Config
         public string SceneName;
         public int NumStepForLoseSecondStar;
         public int NumStepForLoseThirdStar;
-        public Texture2D Texture2D;
     }
 }
