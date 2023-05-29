@@ -26,6 +26,7 @@ namespace MagicCubes.Systems.UI
                 foreach (var item in _configurations.LvlHolderConfig.LvlData)
                 {
                     TemplateContainer container = _uiFilter.Get1(index).LevelElement.Instantiate();
+                    //_uiFilter.Get1(0).Red.ins
                     lvlScreen.Q(levelContainer).Add(container);
                     var lvlElement = new LevelElementComponent()
                     {
