@@ -5,7 +5,7 @@
             <ui:VisualElement name="OnPauseMenu" style="width: 70%; height: 70%; min-width: auto; min-height: auto; display: none; visibility: visible; justify-content: center;">
                 <ui:GroupBox name="ButtonsHolderPause" class="ButtonsHolder" style="align-items: center; justify-content: space-around; background-color: rgba(60, 60, 60, 0.77); border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; flex-direction: row; width: 100%; height: 40%; display: flex;">
                     <ui:Button text="MENU" display-tooltip-when-elided="true" name="BackToMenu" class="MenuButton MenuButtonHover" />
-                    <ui:Button text="RESUME" display-tooltip-when-elided="true" name="ResumeGame" class="MenuButton MenuButtonHover" />
+                    <ui:Button text="RESUME" display-tooltip-when-elided="true" name="ResumeGame" class="MenuButton MenuButtonHover" style="font-size: 48px;" />
                     <ui:Button text="RESET" display-tooltip-when-elided="true" name="ResetGame" class="MenuButton MenuButtonHover" />
                 </ui:GroupBox>
             </ui:VisualElement>
