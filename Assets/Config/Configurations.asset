@@ -15,6 +15,7 @@ MonoBehaviour:
   _lvlHolderConfig: {fileID: 11400000, guid: 86ef526437dfaca4a9b863ebf4467344, type: 2}
   _textureHolder:
     ObtainedStar: {fileID: 2800000, guid: ff0a871fb661c0643b1b6d46bf6ab7ec, type: 3}
+    StarBase: {fileID: 2800000, guid: 3bbe58563f50d5e448f8ad1c95eb753d, type: 3}
     Air: {fileID: 2800000, guid: fae28b62d1de63641b07fce697844061, type: 3}
     Fire: {fileID: 2800000, guid: dc025b3773307524796df08df947c5b4, type: 3}
     Nature: {fileID: 2800000, guid: babad2a62f3c68046a7abc6c1fd40d43, type: 3}

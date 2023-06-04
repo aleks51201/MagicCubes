@@ -16,4 +16,4 @@ MonoBehaviour:
   - SceneName: SampleScene
     NumStepForLoseSecondStar: 10
     NumStepForLoseThirdStar: 5
-    Elements: 010000000100000002000000
+    Elements: 010000000200000003000000

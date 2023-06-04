@@ -19,6 +19,7 @@ namespace MagicCubes.Config
     {
         [Header("Stars")]
         public Texture2D ObtainedStar;
+        public Texture2D StarBase;
         [Space]
         [Header("Elements")]
         public Texture2D Air;
