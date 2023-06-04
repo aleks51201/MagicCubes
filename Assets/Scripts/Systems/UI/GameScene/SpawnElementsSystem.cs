@@ -4,6 +4,8 @@ using MagicCubes.Config;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Linq;
+using UnityEngine.SceneManagement;
 
 namespace MagicCubes.Systems.UI.GameScene
 {
@@ -28,7 +30,7 @@ namespace MagicCubes.Systems.UI.GameScene
             };
             foreach (int i in _uiFilter)
             {
-                foreach (var j in _configurations.LvlHolderConfig.LvlData)
+                foreach (var j in _configurations.LvlHolderConfig.LvlData.Where(x => x.SceneName == SceneManager.GetActiveScene().name))
                 {
                     foreach (var k in j.Elements)
                     {
