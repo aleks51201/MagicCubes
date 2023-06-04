@@ -14,6 +14,7 @@ namespace MagicCubes.Systems.UI.GameScene
 
         private const string IconsHolder = "IconsHolder";
         private const string Icon = "Icon";
+        private const string AnimatedIconStyle = "AnimatedIconStyle";
 
 
         public void Init()
@@ -35,6 +36,8 @@ namespace MagicCubes.Systems.UI.GameScene
                         VisualElement childElement = _uiFilter.Get1(i).IconTemplate.Instantiate();
                         VisualElement icon = childElement.Q(Icon);
                         icon.style.backgroundImage = elementsMap[k];
+                        //icon.style.height = Length.Percent(100);
+                        icon.AddToClassList(AnimatedIconStyle);
                         visualElement.Add(childElement);
                     }
                 }
