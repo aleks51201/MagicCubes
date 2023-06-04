@@ -27,11 +27,11 @@
                 <ui:GroupBox name="ButtonsHolderWin" style="align-items: center; justify-content: space-around; background-color: rgba(60, 60, 60, 0.77); border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 25px; padding-bottom: 10px; flex-direction: row; width: 100%; height: 46%; display: flex; min-width: auto; min-height: auto;">
                     <ui:Button text="MENU" display-tooltip-when-elided="true" name="BackToMenu" class="MenuButton MenuButtonHover" />
                     <ui:Button text="NEXT&#10;LEVEL" display-tooltip-when-elided="true" name="NextLevel" class="MenuButton MenuButtonHover" />
-                    <ui:Button text="REPLAY" display-tooltip-when-elided="true" name="ResetGame" class="MenuButton MenuButtonHover" />
+                    <ui:Button text="REPLAY" display-tooltip-when-elided="true" name="ResetGame" class="MenuButton MenuButtonHover" style="font-size: 48px;" />
                 </ui:GroupBox>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="GameUI" style="width: 100%; height: 100%; align-items: stretch; display: none; visibility: hidden; flex-direction: row;">
+        <ui:VisualElement name="GameUI" style="width: 100%; height: 100%; align-items: stretch; display: flex; visibility: hidden; flex-direction: row;">
             <ui:VisualElement name="LeftSideElement" style="position: relative; height: 100%; width: 20%; left: 0;" />
             <ui:VisualElement name="CentralElement" style="position: relative; height: 100%; width: 60%; left: 0; align-items: center;">
                 <ui:VisualElement name="IconsHolder" class="StartStyleIconsHolder OverrideStyleIconsHolder" style="align-items: flex-start; height: 100%; visibility: hidden;" />
@@ -55,7 +55,7 @@
                             <ui:Label text="WIN" display-tooltip-when-elided="true" name="RotationsAmountToLoseStar3" class="RotationsAmountToLoseStar1" style="margin-right: 0;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="ProgressBar" class="ProgressBarBase">
+                    <ui:VisualElement name="ProgressBar" class="ProgressBarBase" style="height: 395px;">
                         <ui:VisualElement name="ProgressDisplay" style="overflow: visible; background-color: rgb(63, 63, 63); width: 100%; height: 107%; padding-bottom: 2px; border-bottom-width: 2px; border-bottom-color: rgb(83, 0, 245); max-height: 95%;" />
                     </ui:VisualElement>
                 </ui:VisualElement>

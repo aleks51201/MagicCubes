@@ -202,7 +202,7 @@
 
 .ProgressBarStarImageHolder {
     width: 100px;
-    height: 100px;
+    height: 135px;
     visibility: visible;
     align-items: center;
     margin-bottom: 10px;
@@ -230,13 +230,13 @@
 
 .ProgressBarStarImage {
     width: 75px;
-    height: 100px;
+    height: 70px;
     background-image: url('project://database/Assets/Materials/Textures/StarObtained.png?fileID=2800000&guid=ff0a871fb661c0643b1b6d46bf6ab7ec&type=3#StarObtained');
     transition-duration: 750ms;
 }
 
 .RotationsAmountToLoseStar1 {
-    font-size: 25px;
+    font-size: 30px;
     -unity-font-style: bold;
     -unity-text-align: upper-center;
     margin-right: 5px;
@@ -257,8 +257,8 @@
 .BaseIconStyle {
     visibility: visible;
     display: flex;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin-right: 5px;
     margin-left: 5px;
     margin-top: 15px;
@@ -268,8 +268,8 @@
 
 .AnimatedIconStyle {
     top: 0;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     transition-timing-function: ease-out-sine;
     transition-duration: 1250ms;
 }

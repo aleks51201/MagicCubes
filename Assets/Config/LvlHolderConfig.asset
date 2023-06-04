@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: LvlHolderConfig
   m_EditorClassIdentifier: 
   _lvlData:
-  - SceneName: SampleScene
+  - SceneName: Lvl_1
     NumStepForLoseSecondStar: 10
     NumStepForLoseThirdStar: 5
-    Elements: 010000000200000003000000
+    Elements: 020000000200000002000000
+  - SceneName: Lvl_2
+    NumStepForLoseSecondStar: 15
+    NumStepForLoseThirdStar: 7
+    Elements: 03000000030000000300000003000000
