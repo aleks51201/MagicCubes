@@ -13,6 +13,7 @@ namespace MagicCubes.Systems.UI.GameScene
         private readonly Configurations _configurations;
 
         private const string IconsHolder = "IconsHolder";
+        private const string Icon = "Icon";
 
 
         public void Init()
@@ -31,11 +32,9 @@ namespace MagicCubes.Systems.UI.GameScene
                     foreach (var k in j.Elements)
                     {
                         VisualElement visualElement = _uiFilter.Get1(i).UIDocument.rootVisualElement.Q(IconsHolder);
-                        VisualElement childElement = new();
-                        childElement.style.backgroundImage = elementsMap[k];
-                        childElement.style.height=50;
-                        childElement.style.width=50;
-                        childElement.style.visibility = Visibility.Visible;
+                        VisualElement childElement = _uiFilter.Get1(i).IconTemplate.Instantiate();
+                        VisualElement icon = childElement.Q(Icon);
+                        icon.style.backgroundImage = elementsMap[k];
                         visualElement.Add(childElement);
                     }
                 }
