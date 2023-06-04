@@ -2,6 +2,7 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using MagicCubes.Events.Ui;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI
@@ -14,6 +15,7 @@ namespace MagicCubes.Systems.UI
         private readonly Configurations _configurations = null;
 
         private const string levelContainer = "unity-content-container";
+        private const string LevelButton = "LevelButton";
 
         public void Run()
         {
@@ -25,7 +27,8 @@ namespace MagicCubes.Systems.UI
                 int id = 0;
                 foreach (var item in _configurations.LvlHolderConfig.LvlData)
                 {
-                    TemplateContainer container = _uiFilter.Get1(index).LevelElement.Instantiate();
+                    VisualElement container = _uiFilter.Get1(index).LevelElement.Instantiate();
+                    container.Q<Button>(LevelButton).text = $"{id + 1}";
                     //_uiFilter.Get1(0).Red.ins
                     lvlScreen.Q(levelContainer).Add(container);
                     var lvlElement = new LevelElementComponent()
