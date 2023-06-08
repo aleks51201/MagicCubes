@@ -3,6 +3,7 @@ using MagicCubes.Events.Ui;
 using MagicCubes.Systems;
 using MagicCubes.Systems.UI;
 using MagicCubes.Systems.UI.GameScene;
+using MagicCubes.Systems.UI.Save;
 
 namespace MagicCubes
 {
@@ -27,9 +28,11 @@ namespace MagicCubes
         {
             _systems
                 .Add(new InitGameSceneUISystem())
+                .Add(new LoadSystem())
                 .Add(new SpawnElementsSystem())
                 .Add(new LvlInitSystem())
                 .Add(new CreateEntityForCubeViewSystem())
+
                 .Add(new InputSystem())
                 .Add(new ScoringSystem())
                 .Add(new ProgressBarSystem())
@@ -41,6 +44,7 @@ namespace MagicCubes
                 .Add(new OpenWinPanelSystem())
 
                 .Add(new FilStarSystem())
+                .Add(new SaveSystem())
 
                 .Add(new BackToMenuRegisterCallBackSystem())
                 .Add(new ResumeButtonRegisterCallBackSystem())

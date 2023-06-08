@@ -1,5 +1,7 @@
 ﻿using MagicCubes.Events.Ui;
 using MagicCubes.Systems.UI;
+using MagicCubes.Systems.UI.MenuScene;
+using MagicCubes.Systems.UI.Save;
 
 namespace MagicCubes
 {
@@ -19,8 +21,11 @@ namespace MagicCubes
         private protected override void AddSystems()
         {
             _systems
-                // .Add(new SceneConfigValidatorSystem())
                 .Add(new CreateEntityForUIVisualElementSystem())
+
+                .Add(new InitSavesSystem())
+                .Add(new LoadSystem())
+
                 .Add(new StartButtonRegisterCallbackSystem())
                 .Add(new StartButtonClickHandlerSystem())
                 .Add(new lvlChooseScreenInitStartSystem())
