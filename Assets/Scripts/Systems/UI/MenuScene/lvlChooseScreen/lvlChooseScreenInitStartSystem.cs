@@ -53,13 +53,18 @@ namespace MagicCubes.Systems.UI
             VisualElement starsHolder = container.Q(StarsHolder);
             for (int i = 0; i <= countStars; i++)
             {
-                if (i == 0) continue;
-                VisualElement newStar = new();
-                newStar.style.backgroundImage = _configurations.TextureHolder.ObtainedStar;
-                newStar.style.width = 100;
-                newStar.style.height = 100;
-                newStar.style.visibility = Visibility.Visible;
-                starsHolder.Add(newStar);
+                foreach (var j in _uiFilter)
+                {
+                    if (i == 0) continue;
+                    VisualElement newStar = _uiFilter.Get1(j).LevelStar.Instantiate();
+                    newStar.style.backgroundImage = _configurations.TextureHolder.ObtainedStar;
+                    newStar.style.visibility = Visibility.Visible;
+                    /*                    newStar.style.width = 100;
+                                        newStar.style.height = 100;
+                                        newStar.style.visibility = Visibility.Visible;
+                    */
+                    starsHolder.Add(newStar);
+                }
             }
         }
     }
