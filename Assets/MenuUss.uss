@@ -240,6 +240,7 @@
     -unity-font-style: bold;
     -unity-text-align: upper-center;
     margin-right: 5px;
+    color: rgba(255, 255, 255, 255);
 }
 
 .StartStyleIconsHolder {
@@ -272,4 +273,7 @@
     height: 150px;
     transition-timing-function: ease-out-sine;
     transition-duration: 1250ms;
+}
+
+.unity-text-element {
 }

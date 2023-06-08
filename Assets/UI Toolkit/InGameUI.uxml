@@ -21,7 +21,7 @@
                         <ui:IMGUIContainer name="BigStarObtained3" class="NoBigStarStyle" style="transition-duration: 1500ms; transition-timing-function: ease-out-elastic;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="StepsCountWinHolder" style="width: 100%; height: auto; display: flex; justify-content: center; align-items: center; padding-left: 25px; padding-right: 25px; padding-top: 25px; padding-bottom: 25px;">
+                <ui:VisualElement name="StepsCountWinHolder" style="width: 100%; height: auto; display: flex; justify-content: center; align-items: center; padding-left: 25px; padding-right: 25px; padding-top: 25px; padding-bottom: 25px; color: rgba(243, 243, 243, 255);">
                     <ui:Label text="Rotations: 0" display-tooltip-when-elided="true" name="RotationsCount" style="width: 100%; height: 33%; font-size: 61%; -unity-font-style: bold; -unity-text-align: middle-center; white-space: normal; visibility: visible;" />
                 </ui:VisualElement>
                 <ui:GroupBox name="ButtonsHolderWin" style="align-items: center; justify-content: space-around; background-color: rgba(60, 60, 60, 0.77); border-top-left-radius: 25px; border-bottom-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 25px; padding-bottom: 10px; flex-direction: row; width: 100%; height: 46%; display: flex; min-width: auto; min-height: auto;">
@@ -38,7 +38,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="RightSideElement" style="position: relative; height: 100%; width: 20%; left: 0; flex-direction: column; justify-content: flex-start;">
                 <ui:VisualElement name="StepsCountPanel" style="width: 100%; height: 10%; visibility: visible; transform-origin: right top;">
-                    <ui:Label text="Rotations: 0" display-tooltip-when-elided="true" name="RotationsCount" style="padding-left: 0; padding-right: 5%; padding-top: 3%; padding-bottom: 0; font-size: 45px; align-items: flex-start; -unity-text-align: upper-right; -unity-font-style: bold; width: 100%; height: 100%;" />
+                    <ui:Label text="Rotations: 0" display-tooltip-when-elided="true" name="RotationsCount" style="padding-left: 0; padding-right: 5%; padding-top: 3%; padding-bottom: 0; font-size: 45px; align-items: flex-start; -unity-text-align: upper-right; -unity-font-style: bold; width: 100%; height: 100%; color: rgba(255, 255, 255, 255);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="ProgressBarPanel" style="height: 438px; width: 100%; margin-left: 0; margin-top: 0; flex-direction: row; margin-right: 0; margin-bottom: 0; justify-content: flex-end;">
                     <ui:VisualElement name="StarsHolder">
