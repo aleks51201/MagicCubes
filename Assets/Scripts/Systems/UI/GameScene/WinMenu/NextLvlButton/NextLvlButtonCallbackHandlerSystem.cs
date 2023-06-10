@@ -34,7 +34,7 @@ namespace MagicCubes.Systems.UI
                         break;
                     }
                 }
-                if (numSceneName + 1 < _configurations.LvlHolderConfig.LvlData.Length && numSceneName != 0)
+                if (numSceneName + 1 < _configurations.LvlHolderConfig.LvlData.Length)
                 {
                     SceneManager.LoadScene(_configurations.LvlHolderConfig.LvlData[numSceneName + 1].SceneName);
                 }
