@@ -3,6 +3,7 @@ using MagicCubes.Components;
 using MagicCubes.Events;
 using MagicCubes.Tag;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace MagicCubes.Systems
 {
@@ -21,7 +22,7 @@ namespace MagicCubes.Systems
                 var transform = entity.Get<CubeInitComponent>().cubeView.transform;
                 ref var winYRotaion = ref entity.Get<CubeInitComponent>().winYRotation;
 
-                if (transform.rotation.y == winYRotaion)
+                if (transform.rotation.eulerAngles.y == winYRotaion)
                 {
                     winComonents.Add(entity.Get<CubeInitComponent>());
                     entity.Del<EndRotateEvent>();
