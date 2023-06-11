@@ -25,7 +25,6 @@ namespace MagicCubes.Systems
                 {
                     RaycastHit hit;
                     Camera camera = _cameraFilter.Get1(i).Camera;
-                    //LayerMask layerMask = _cameraFilter.Get1(i).LayerMask;
                     Ray ray = camera.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out hit))
                     {
