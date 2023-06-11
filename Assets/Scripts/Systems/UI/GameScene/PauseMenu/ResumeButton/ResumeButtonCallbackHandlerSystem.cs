@@ -7,7 +7,6 @@ namespace MagicCubes.Systems.UI
 {
     internal sealed class ResumeButtonCallbackHandlerSystem : IEcsRunSystem
     {
-        private readonly EcsWorld _world = null;
         private readonly EcsFilter<ResumeButtonClickEvent, ResumeButtonComponent> _btnFilter = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
 
