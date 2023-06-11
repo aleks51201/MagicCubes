@@ -2,16 +2,12 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Events.Ui;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI
 {
     public class FilStarSystem : IEcsRunSystem
     {
-        private readonly EcsWorld _world = null;
         private readonly EcsFilter<OpenedWinMenuEvent> _winFilter = null;
         private readonly EcsFilter<UIInitComponent> _uiFilter = null;
         private readonly EcsFilter<StarHolderComponent> _starFilter = null;
