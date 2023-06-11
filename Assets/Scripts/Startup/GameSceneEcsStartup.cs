@@ -1,6 +1,7 @@
 ﻿using MagicCubes.Events;
 using MagicCubes.Events.Ui;
 using MagicCubes.Systems;
+using MagicCubes.Systems.GameScene;
 using MagicCubes.Systems.UI;
 using MagicCubes.Systems.UI.GameScene;
 using MagicCubes.Systems.UI.Save;
@@ -34,6 +35,9 @@ namespace MagicCubes
                 .Add(new CreateEntityForCubeViewSystem())
 
                 .Add(new InputSystem())
+                .Add(new RayCastSystem())
+
+                .Add(new PariticleStarterSystem())
                 .Add(new ScoringSystem())
                 .Add(new ProgressBarSystem())
                 .Add(new ProgressStarSystem())
