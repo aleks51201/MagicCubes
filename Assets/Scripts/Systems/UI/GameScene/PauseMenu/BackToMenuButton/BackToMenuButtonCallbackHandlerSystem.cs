@@ -7,7 +7,6 @@ namespace MagicCubes.Systems.UI
 {
     internal sealed class BackToMenuButtonCallbackHandlerSystem : IEcsRunSystem
     {
-        private readonly EcsWorld _world = null;
         private readonly EcsFilter<BackButtonToMenuButtonClickEvent, BackToMenuButtonComponent> _btnFilter = null;
 
         private const string MenuScene = "MenuScene";
