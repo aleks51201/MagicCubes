@@ -18,7 +18,7 @@ namespace MagicCubes.Systems.GameScene
         {
             foreach (var i in _cubeFilter)
             {
-                _cubeFilter.GetEntity(i).Get<ParticleComponent>().CurrentParticleSystem = new();
+                _cubeFilter.GetEntity(i).Get<ParticleComponent>().CurrentParticleSystems = new();
             }
         }
 
@@ -32,19 +32,19 @@ namespace MagicCubes.Systems.GameScene
                     Transform cubeTransform = _neighboorFilter.Get2(j).cubeView.transform;
                     List<Transform> transforms = GetNeighboors(j);
                     transforms.Add(cubeTransform);
-                    List<ParticleSystem> particles = _neighboorFilter.Get3(j).CurrentParticleSystem;
+                    List<ParticleSystem> particles = _neighboorFilter.Get3(j).CurrentParticleSystems;
                     List<ParticleSystem> newParticles = new();
                     if (IsEqual(rayTransform, cubeTransform))
                     {
                         if (particles.Count != 0) continue;
                         newParticles = Start(transforms);
-                        _neighboorFilter.Get3(j).CurrentParticleSystem = newParticles;
+                        _neighboorFilter.Get3(j).CurrentParticleSystems = newParticles;
                     }
                     else
                     {
                         if (particles.Count == 0) continue;
                         Stop(particles);
-                        _neighboorFilter.Get3(j).CurrentParticleSystem = new();
+                        _neighboorFilter.Get3(j).CurrentParticleSystems = new();
                     }
                 }
             }
