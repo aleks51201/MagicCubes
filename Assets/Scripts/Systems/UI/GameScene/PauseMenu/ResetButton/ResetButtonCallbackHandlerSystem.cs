@@ -7,7 +7,6 @@ namespace MagicCubes.Systems.UI
 {
     internal sealed class ResetButtonCallbackHandlerSystem : IEcsRunSystem
     {
-        private readonly EcsWorld _world = null;
         private readonly EcsFilter<ResetButtonClickEvent, ResetButtonComponent> _btnFilter = null;
 
 
