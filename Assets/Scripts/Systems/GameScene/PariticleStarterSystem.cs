@@ -9,12 +9,10 @@ namespace MagicCubes.Systems.GameScene
 {
     public class PariticleStarterSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private readonly EcsWorld _world;
         private readonly EcsFilter<RayCastComponent> _rayFilter;
         private readonly EcsFilter<CubeInitComponent> _cubeFilter;
         private readonly EcsFilter<NeighborsComponent, CubeInitComponent, ParticleComponent> _neighboorFilter;
 
-        private const string Cube = "Cube";
 
         public void Init()
         {
@@ -29,7 +27,6 @@ namespace MagicCubes.Systems.GameScene
             foreach (var i in _rayFilter)
             {
                 Transform rayTransform = _rayFilter.Get1(i).RaycastHit.transform;
-                //if (!rayTransform.CompareTag(Cube)) break;
                 foreach (var j in _neighboorFilter)
                 {
                     Transform cubeTransform = _neighboorFilter.Get2(j).cubeView.transform;
@@ -70,15 +67,6 @@ namespace MagicCubes.Systems.GameScene
             res.Play();
             return res;
         }
-        private ParticleSystem[] Start(IEnumerable<Transform> transforms)
-        {
-            List<ParticleSystem> res = new();
-            foreach (Transform transform in transforms)
-            {
-                res.Add(Start(transform));
-            }
-            return res.ToArray();
-        }
 
         private void Stop(ParticleSystem particleSystem)
         {
@@ -98,33 +86,6 @@ namespace MagicCubes.Systems.GameScene
         private ParticleSystem GetParticleSystem(Transform transform)
         {
             return transform.GetComponentInChildren<ParticleSystem>();
-        }
-
-        private List<Transform> FindEqual(Transform currentCubeTransform, EcsFilter<NeighborsComponent, CubeInitComponent, ParticleComponent> filter)
-        {
-            List<Transform> res = new();
-            foreach (var i in filter)
-            {
-                if (filter.Get2(i).cubeView.transform == currentCubeTransform)
-                {
-                    res.Add(currentCubeTransform);
-                    foreach (var neighbor in filter.Get1(i).neighborsCubes)
-                    {
-                        res.Add(neighbor.transform);
-                    }
-                }
-            }
-            return res;
-        }
-
-        private bool IsEqual(List<Transform> transforms, List<ParticleSystem> particles)
-        {
-            if (transforms.Count != particles.Count) return false;
-            for (int i = 0; i < transforms.Count; i++)
-            {
-                if (GetParticleSystem(transforms[i]) == particles[i]) return false;
-            }
-            return true;
         }
 
         private bool IsEqual(Transform first, Transform second)
