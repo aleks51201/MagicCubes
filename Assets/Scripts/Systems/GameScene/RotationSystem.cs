@@ -23,14 +23,14 @@ namespace MagicCubes.Systems
                 ref var rotation = ref _rotationFilter.Get2(item).rotation;
                 ref var neighbors = ref _rotationFilter.Get3(item).neighborsCubes;
 
-                transform.Rotate(new Vector3(0, rotation, 0),Space.World);
+                transform.Rotate(new Vector3(0, rotation, 0), Space.World);
                 foreach (CubeView cube in neighbors)
                 {
                     if (cube is null)
                     {
                         break;
                     }
-                    cube.transform.Rotate(new Vector3(0, rotation, 0),Space.World);
+                    cube.transform.Rotate(new Vector3(0, rotation, 0), Space.World);
                 }
                 entity.Del<RotateEvent>();
             }

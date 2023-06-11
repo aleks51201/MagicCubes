@@ -19,12 +19,12 @@ namespace MagicCubes.Systems.UI.Save
 
         public void Run()
         {
-            foreach(var k in _winFilter)
+            foreach (var k in _winFilter)
             {
                 foreach (var i in _saveFilter)
                 {
                     ref SavesComponent savesComponent = ref _saveFilter.Get1(i);
-                    foreach(var j in _saveFilter)
+                    foreach (var j in _saveFilter)
                     {
                         ref StarHolderComponent starHolderComponent = ref _starFilter.Get1(i);
                         if (PlayerPrefs.HasKey(KEY))

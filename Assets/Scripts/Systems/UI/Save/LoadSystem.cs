@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MagicCubes.Systems.UI.Save
 {
-    public class LoadSystem: IEcsInitSystem
+    public class LoadSystem : IEcsInitSystem
     {
         private readonly EcsWorld _world;
 

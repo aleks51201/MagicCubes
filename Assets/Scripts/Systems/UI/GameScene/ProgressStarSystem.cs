@@ -2,8 +2,8 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using MagicCubes.Events;
-using UnityEngine.UIElements;
 using System;
+using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
 {
@@ -89,13 +89,13 @@ namespace MagicCubes.Systems.UI.GameScene
         private void SetCountStar(int countStar)
         {
             int n = 0;
-            foreach(var i in _starFilter)
+            foreach (var i in _starFilter)
             {
                 ref var starHolder = ref _starFilter.Get1(i);
                 starHolder.StarCount = countStar;
                 n++;
             }
-            if(n ==0)
+            if (n == 0)
             {
                 throw new Exception($"Component '{nameof(StarHolderComponent)}' not found");
             }

@@ -30,7 +30,7 @@ namespace MagicCubes.Systems.UI.MenuScene
             }
             SavesComponent savesComponent = new() { Levls = levels.ToArray() };
             string str = JsonConvert.SerializeObject(
-                savesComponent, 
+                savesComponent,
                 Formatting.Indented,
                 new JsonSerializerSettings
                 {

@@ -2,10 +2,10 @@
 using MagicCubes.Components.Ui;
 using MagicCubes.Config;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UIElements;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 namespace MagicCubes.Systems.UI.GameScene
 {
