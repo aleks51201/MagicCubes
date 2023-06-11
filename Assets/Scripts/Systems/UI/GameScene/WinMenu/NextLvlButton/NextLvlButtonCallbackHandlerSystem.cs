@@ -8,9 +8,7 @@ namespace MagicCubes.Systems.UI
 {
     internal sealed class NextLvlButtonCallbackHandlerSystem : IEcsRunSystem
     {
-        private readonly EcsWorld _world = null;
         private readonly EcsFilter<NextLvlButtonToMenuButtonClickEvent, NextLvlButtonComponent> _btnFilter = null;
-        private readonly EcsFilter<CurrentLvlComponent> _currentFilter = null;
         private readonly Configurations _configurations;
 
         private const string MenuScene = "MenuScene";
